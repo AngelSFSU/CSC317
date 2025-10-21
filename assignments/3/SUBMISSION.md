@@ -1,7 +1,7 @@
 # CSC 317 Assignment 3 Group Submission
 
 **Group Members:**
-- [Student Name 1] - [Student ID] - [GitHub Username]
+- [Angel Sandooval] - [922793869] - [AngelSFSU]
 - [David Gomez] - [92323852] - [Inkdg8]
 - [Student Name 3] - [Student ID] - [GitHub Username]
 - [Student Name 4] - [Student ID] - [GitHub Username] (if applicable)
