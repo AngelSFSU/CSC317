@@ -2,7 +2,7 @@
 
 **Group Members:**
 - [Student Name 1] - [Student ID] - [GitHub Username]
-- [Student Name 2] - [Student ID] - [GitHub Username]
+- [David Gomez] - [92323852] - [Inkdg8]
 - [Student Name 3] - [Student ID] - [GitHub Username]
 - [Student Name 4] - [Student ID] - [GitHub Username] (if applicable)
 
