@@ -1,7 +1,7 @@
 # Group Information
 
 **Group Members:**
-- [Student Name 1] - [Student ID] - [GitHub Username] - **Hand-written CSS (Part 1)**
+- [Angel Sandoval] - [922793869] - AngelSFSU] - **Hand-written CSS (Part 1)**
 - [David Gomez] - [923283852] - [Inkdg8] - **Hand-written CSS (Part 2)**
 - [Student Name 3] - [Student ID] - [GitHub Username] - **AI Text Prompt CSS**
 - [Student Name 4] - [Student ID] - [GitHub Username] - **AI Image+Text Prompt CSS** (if applicable)
