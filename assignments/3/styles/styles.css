@@ -1,22 +1,38 @@
 body {
-
-
+font-family: cursive;
+background-color: #280137;
+margin: 0;
+    padding: 0;
 }
 
 header{
-
+background-color: #1a0125; 
+    padding: 20px 40px;
+    text-align: center;
+    border-bottom: 2px solid #5a0372;
 }
 
 header h1{
-
+color: #ffcc00; 
+    font-size: 3em;
+    margin-bottom: 5px;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 header p{
-
+color: #cccccc; 
+    font-size: 1.2em;
+    margin-top: 0;
 }
 
 main{
-
+max-width: 1000px;
+    margin: 40px auto; 
+    padding: 20px;
+    background-color: #38014a;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 section{
