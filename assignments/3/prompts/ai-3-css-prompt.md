@@ -98,7 +98,7 @@
 
 
 
-# AI-1 CSS Prompt
+# AI-3 CSS Prompt
 
 Create a professional, modern tech-style personal portfolio website.
 
