@@ -3,7 +3,7 @@
 **Group Members:**
 - [Angel Sandooval] - [922793869] - [AngelSFSU]
 - [David Gomez] - [92323852] - [Inkdg8]
-- [Student Name 3] - [Student ID] - [GitHub Username]
+- [James Muhlenbruch] - [924417647] - [jamesmuh98]
 - [Student Name 4] - [Student ID] - [GitHub Username] (if applicable)
 
 **Elected Submitter:** [Name and GitHub username]
