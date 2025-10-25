@@ -3,7 +3,7 @@
 **Group Members:**
 - [Angel Sandoval] - [922793869] - [AngelSFSU] - **Hand-written CSS (Part 1)**
 - [David Gomez] - [923283852] - [Inkdg8] - **Hand-written CSS (Part 2)**
-- [Student Name 3] - [Student ID] - [GitHub Username] - **AI Text Prompt CSS**
+- [James Muhlenbruch] - [924417647] - [jamesmuh98] - **AI Text Prompt CSS**
 - [Student Name 4] - [Student ID] - [GitHub Username] - **AI Image+Text Prompt CSS** (if applicable)
 
 **Elected Submitter:** [Name and GitHub username of person submitting]
