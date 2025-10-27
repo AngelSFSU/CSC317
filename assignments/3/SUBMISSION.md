@@ -16,10 +16,10 @@
 ## Individual Reflections
 
 ### [Angel Sandoval] - Hand-written CSS (Part 1)
-The handwritten verison of the css was fairly standard. Considering, that the whole group divided the work into three sections. I handled the first five parts. Starting from the body and ending in main. The process was fun, and the brainstorming was productive.
-
-### [Member 2 Name] - Hand-written CSS (Part 2)
 [Individual reflection on lessons learned and contribution to hand-written CSS]
+
+### [David Gomez] - Hand-written CSS (Part 2)
+The handwritten section was interesting because it was just an amalgamation of all of us working together. We had fun with the idea and decided what if we all just choose our own styles. The proccess was a bunch of what about this and this, let's just see what happens.dg
 
 ### [James Muhlenbruch] - AI Text Prompt CSS
 I found the Ai text promp CSS portion to be fairly easy, and was actually nice to manipulate
