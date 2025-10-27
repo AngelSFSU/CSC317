@@ -13,6 +13,7 @@
 - Hand-written CSS (Collaborative): Angel Sandoval and David Gomez and James Muhlenbruch
   - [Angel Sandoval]: [Body - Main]
   - [David Gomez]: [Outlining of html and css also section portion of handwritten]
+  - [James Muhlenbruch]: [ul - a, also worked on switcher]
 - AI Text Prompt CSS: [All members]
 - Hybrid Solution: [All Members - collaborative effort]
 - Switcher Implementation: [All Members - collaborative effort]
