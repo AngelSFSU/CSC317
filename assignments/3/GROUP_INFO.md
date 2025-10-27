@@ -12,9 +12,8 @@
 ## Work Distribution
 - Hand-written CSS (Collaborative): Angel Sandoval and David Gomez and James Muhlenbruch
   - [Angel Sandoval]: [Body - Main]
-  - [Member 2]: [Specific sections/responsibilities]
-- AI Text Prompt CSS: [Member 3 Name]
-- AI Image+Text Prompt CSS: [Member 4 Name] (or Member 3 if 3-person group)
+  - [David Gomez]: [Outlining of html and css also section portion of handwritten]
+- AI Text Prompt CSS: [All members]
 - Hybrid Solution: [All Members - collaborative effort]
 - Switcher Implementation: [All Members - collaborative effort]
-- Documentation & Analysis: [Lead member name(s)]
+- Documentation & Analysis: [All members]
