@@ -16,7 +16,7 @@
 ## Individual Reflections
 
 ### [Angel Sandoval] - Hand-written CSS (Part 1)
-[Individual reflection on lessons learned and contribution to hand-written CSS]
+The handwritten portion was this assignment was rather standard. As our group divided the work into three parts. I did the first, which included starting from the body and ending in main. This was fun, and the brainstorming was productive.
 
 ### [David Gomez] - Hand-written CSS (Part 2)
 The handwritten section was interesting because it was just an amalgamation of all of us working together. We had fun with the idea and decided what if we all just choose our own styles. The proccess was a bunch of what about this and this, let's just see what happens.dg
