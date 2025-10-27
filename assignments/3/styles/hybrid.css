@@ -80,7 +80,7 @@ ul li {
 }
 
 li:hover {
-  color: var(--gold);
+  color: #e0b84e;
   transform: translateX(5px);
 }
 
