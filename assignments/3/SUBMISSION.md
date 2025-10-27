@@ -11,7 +11,7 @@
 # Portfolio Styling Assignment Analysis
 
 ## Group Analysis (250-500 words)
-[Write a collaborative analysis comparing the different approaches. Each member should contribute to this section.]
+When writting the html we took heavy inspirtation from assignment 2. We simply added sections for each member and if we needed to add more we came together to add what was needed. In the handwritten version, it was an amalgamation of all of working together but seperately. It was just a constant porcess of why don't we do this and why not? In the end we agreed that the handwritten css is quite unappeakling. The AI prompted version were more organized in our individual visions. Angel went for a more american color scheme approach, David went for a more cooler color and vibrant approach, and James had a more darker proffesional asthetic. They all came out well and we liked a few things from each. The group preferred David's colors and liked the extra details that James' had. We collaborated well and had some struggles regarding the switcher. We got some of the jist thatnks to the proffesor for proividing the switcher, but getting to properly work and switch was a issue. Luckily after some time we got it to work. Another time consuming part was implementing the image. Wwe had to changfe the size, file type and structure. We weren't expierenced in implementing but overall we got it and it came well. Overall though this was a good expierence for the group and we learned a lot. The group worked really well with each other and we all did our part into maing it work, with the work splitting up quite evenly. 
 
 ## Individual Reflections
 
