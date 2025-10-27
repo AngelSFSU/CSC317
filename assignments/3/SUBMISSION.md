@@ -4,10 +4,9 @@
 - [Angel Sandooval] - [922793869] - [AngelSFSU]
 - [David Gomez] - [92323852] - [Inkdg8]
 - [James Muhlenbruch] - [924417647] - [jamesmuh98]
-- [Student Name 4] - [Student ID] - [GitHub Username] (if applicable)
 
-**Elected Submitter:** [Name and GitHub username]
-**Repository Link:** https://github.com/[submitter-username]/CSC317/tree/main/assignments/3
+**Elected Submitter:** [Angel Sandoval; AngelSFSU]
+**Repository Link:** https://github.com/AngelSFSU/CSC317/tree/main/assignments/3
 
 # Portfolio Styling Assignment Analysis
 
@@ -16,7 +15,7 @@
 
 ## Individual Reflections
 
-### [Member 1 Name] - Hand-written CSS (Part 1)
+### [Angel Sandoval] - Hand-written CSS (Part 1)
 [Individual reflection on lessons learned and contribution to hand-written CSS]
 
 ### [Member 2 Name] - Hand-written CSS (Part 2)
@@ -25,8 +24,6 @@
 ### [Member 3 Name] - AI Text Prompt CSS
 [Individual reflection on AI prompting experience and lessons learned]
 
-### [Member 4 Name] - AI Image+Text Prompt CSS (if applicable)
-[Individual reflection on AI prompting with images and lessons learned]
 
 ## Group Preferred Version
 [Explain which version the group prefers and why - this should be a consensus decision]
