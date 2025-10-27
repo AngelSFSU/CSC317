@@ -16,7 +16,7 @@
 ## Individual Reflections
 
 ### [Angel Sandoval] - Hand-written CSS (Part 1)
-[Individual reflection on lessons learned and contribution to hand-written CSS]
+The handwritten verison of the css was fairly standard. Considering, that the whole group divided the work into three sections. I handled the first five parts. Starting from the body and ending in main. The process was fun, and the brainstorming was productive.
 
 ### [Member 2 Name] - Hand-written CSS (Part 2)
 [Individual reflection on lessons learned and contribution to hand-written CSS]
