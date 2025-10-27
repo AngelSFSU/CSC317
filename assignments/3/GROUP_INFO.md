@@ -10,8 +10,8 @@
 **Repository Link:** https://github.com/[submitter-username]/CSC317/tree/main/assignments/3
 
 ## Work Distribution
-- Hand-written CSS (Collaborative): [Member 1 Name] and [Member 2 Name]
-  - [Member 1]: [Specific sections/responsibilities]
+- Hand-written CSS (Collaborative): Angel Sandoval and David Gomez and James Muhlenbruch
+  - [Angel Sandoval]: [Body - Main]
   - [Member 2]: [Specific sections/responsibilities]
 - AI Text Prompt CSS: [Member 3 Name]
 - AI Image+Text Prompt CSS: [Member 4 Name] (or Member 3 if 3-person group)
