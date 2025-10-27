@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            CSC317 - Group Portfolio
+        </title>
+    </head>
+    <body>
+        <header>
+            <h1>
+                Group Portfolio
+            </h1>
+            <P>
+                About us:
+            </P>
+        </header>
+    </body>
+    <main>
+        <section>
+           <h2>
+            Angel Sandoval
+           </h2> 
+           <p>
+            Description: Greetings! I am Angel Sandoval, a student at San Francisco State University. I am currently in my senior year at SFSU. I came to SFSU to major in computer science. I was always fascinated by how video games worked. So when I learned I can become a coder and write my own games, I decided to focus on computer science. Yet, my experience with it is limited. I only truly started to code about a year ago. The only language I know is Java as I used it on the IDE:Intellij. I strive to be able to create games that not only I like but others do as well. Along side that, Being able to work at home/anywhere would be nice. So I would not have to worry about vacations/lack of them. My hobby is playing video games.
+           </p>
+           <h3>
+            [Skills]
+           </h3>
+           <ul>
+            <li>
+                Java
+            </li>
+            <li>
+                Python
+            </li>
+            <li>
+                HTML
+            </li>
+           </ul>
+        </section>
+
+        <section>
+           <h2>
+            David Gomez
+           </h2> 
+           <p>
+            Description: I am currently pursuing my bachelor's degree in Computer Science, and the highest completed level of education is high school. I chose Computer Science because the industry interests me, and I believe it is the future going forward.The growing potential and overall expanse of Computer Science truly appealed to me. My father worked in the Air Force and had top secret clearance, so once I graduate, I am thinking of working for the government and possibly the CIA.
+           </p>
+           <h3>
+            [Skills]
+           </h3>
+           <ul>
+            <li>
+                Expierenced Java Coder
+            </li>
+            <li>
+                C++ Enthusiast
+            </li>
+            <li>
+                HTML Aspiring Learner
+            </li>
+           </ul>
+        </section>
+
+        <section>
+           <h2>
+            [Name]
+           </h2> 
+           <p>
+            [Description]
+           </p>
+           <h3>
+            [Skills]
+           </h3>
+           <ul>
+            <li>
+                [Blank]
+            </li>
+            <li>
+                [Blank]
+            </li>
+            <li>
+                [Blank]
+            </li>
+           </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            [contacts]
+        </p>
+    </footer>
+</html>
+
+2. AI-Generated CSS with Text Prompt (ai-1.css, ai-2.css, ai-3.css, ...) - Group Responsibility (One Per Member)
+**Use an AI tool to generate a complete CSS file:
+
+Use an AI tool (like Claude, ChatGPT, or Copilot) to generate a complete CSS file
+Provide the AI with a detailed text prompt describing desired look and feel
+Your prompt should include specific details about:
+Color scheme preferences
+Typography style
+Layout preferences
+Any specific design elements you want included (At least one image should be styled)
+Save the AI's response as styles/ai-X.css without modifications. You can use AI to iterate but not code manually.
+Save the prompt used as prompts/ai-1-css-prompt.md
+
+
+now with the background details out of the way I provided my html for you to add css to. I want a more vibrant but cool vibe, colors like blue and purple and white text font. So semi professional and good colors.

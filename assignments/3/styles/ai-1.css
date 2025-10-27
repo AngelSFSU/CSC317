@@ -1,0 +1,136 @@
+/*
+ * AI-Generated CSS (styles/ai-1.css)
+ * Theme: Red, White, and Blue Group Portfolio
+ */
+
+/* --- Color Variables for easy theme adjustments --- */
+:root {
+    --navy-blue: #000080; /* Primary Accent */
+    --deep-red: #B22222; /* Secondary Accent/Highlight (Firebrick) */
+    --white: #FFFFFF;
+    --light-gray: #F0F0F0; /* Body Background */
+    --dark-text: #333333; /* Main Text Color */
+}
+
+/* --- Base and Global Styles --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-gray);
+    color: var(--dark-text);
+}
+
+/* --- Layout Container --- */
+main {
+    max-width: 1000px;
+    margin: 20px auto; /* Center the main content */
+    padding: 20px;
+}
+
+/* --- Header Styling --- */
+header {
+    background-color: var(--navy-blue);
+    color: var(--white);
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 5px solid var(--deep-red); /* Red accent line */
+}
+
+header h1 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* --- Typography (Headings) --- */
+h1, h2 {
+    color: var(--navy-blue);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    border-bottom: 2px dashed var(--deep-red);
+    padding-bottom: 5px;
+}
+
+h3 {
+    color: var(--deep-red);
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* --- Section (Card) Styling --- */
+section {
+    background-color: var(--white);
+    padding: 25px;
+    margin-bottom: 30px;
+    border-left: 5px solid var(--deep-red); /* Prominent Deep Red border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 4px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Skills List (Badge/Pill Styling) --- */
+section ul {
+    list-style: none;
+    display: flex; /* Display items side-by-side */
+    flex-wrap: wrap;
+    padding: 0;
+    gap: 10px; /* Space between badges */
+}
+
+section ul li {
+    background-color: var(--deep-red);
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 20px; /* Rounded pill shape */
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: capitalize;
+    transition: background-color 0.2s;
+}
+
+section ul li:hover {
+    background-color: var(--navy-blue);
+}
+
+/* --- UPDATED IMAGE STYLING --- */
+/* Replacing the .avatar style with the generic img selector style requested */
+img {
+    max-width: 100%;
+    border-radius: 10px;
+    display: block;
+    margin: 1rem auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Footer Styling --- */
+footer {
+    background-color: var(--dark-text);
+    color: var(--light-gray);
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.8em;
+}
