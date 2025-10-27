@@ -46,8 +46,8 @@ section {
 
 section:hover {
     transform: translateY(-5px);
-  border-color: #e0b84e;
-  box-shadow: 0 0 20px rgba(224, 184, 78, 0.4);
+  box-shadow: 0 0 20px #c9a0ff;
+;
 }
 
 h2 {
