@@ -21,8 +21,9 @@
 ### [Member 2 Name] - Hand-written CSS (Part 2)
 [Individual reflection on lessons learned and contribution to hand-written CSS]
 
-### [Member 3 Name] - AI Text Prompt CSS
-[Individual reflection on AI prompting experience and lessons learned]
+### [James Muhlenbruch] - AI Text Prompt CSS
+I found the Ai text promp CSS portion to be fairly easy, and was actually nice to manipulate
+when I wanted to change something and wanted the AI to change. It also helped a lot when comparing to the others AI CSS as all three of ours was different and gave us alot of things to choose from when making our hybrid.
 
 
 ## Group Preferred Version
