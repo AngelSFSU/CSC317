@@ -27,7 +27,7 @@ when I wanted to change something and wanted the AI to change. It also helped a 
 
 
 ## Group Preferred Version
-[Explain which version the group prefers and why - this should be a consensus decision]
+The group preferred ai 2 css due to the colors, we also liked the hover feature found in ai 3 css. Honorable mention being ai 1 css, as it looked like a DMV/GOV site.
 
 ## Collaboration Experience
 [Describe how the group worked together, challenges faced, and lessons learned about teamwork]
