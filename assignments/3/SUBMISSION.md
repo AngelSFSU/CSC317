@@ -30,4 +30,4 @@ when I wanted to change something and wanted the AI to change. It also helped a 
 The group preferred ai 2 css due to the colors, we also liked the hover feature found in ai 3 css. Honorable mention being ai 1 css, as it looked like a DMV/GOV site.
 
 ## Collaboration Experience
-[Describe how the group worked together, challenges faced, and lessons learned about teamwork]
+For everything that went on in the assignment, we made a group call and worked together splitting it up into parts for all 3 of us to work simultaneously. The biggest challenge was implementing the switcher, as for a while when it finally showed on the page, the buttons weren't working. I think we all worked pretty well as a team and we learned that it can be fun when we all have a direction of how each of us need to contribute, and we all did end up having fun implementing everything.
