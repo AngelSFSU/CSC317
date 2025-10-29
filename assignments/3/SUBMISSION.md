@@ -21,6 +21,12 @@ The handwritten portion was this assignment was rather standard. As our group di
 ### [David Gomez] - Hand-written CSS (Part 2)
 The handwritten section was interesting because it was just an amalgamation of all of us working together. We had fun with the idea and decided what if we all just choose our own styles. The proccess was a bunch of what about this and this, let's just see what happens.dg
 
+### [Angel Sandoval] - AI Text Prompt CSS
+The AI portion of this assignment was easy. All I had to do was copy and paste the AI section of the assignemnt into Gemini. The only hands on I had to do is tell the AI what I wanted the portfolio to look like. I chose red, white, and blue as the theme.
+
+### [David Gomez] - AI Text Prompt CSS
+
+
 ### [James Muhlenbruch] - AI Text Prompt CSS
 I found the Ai text promp CSS portion to be fairly easy, and was actually nice to manipulate
 when I wanted to change something and wanted the AI to change. It also helped a lot when comparing to the others AI CSS as all three of ours was different and gave us alot of things to choose from when making our hybrid.
