@@ -25,7 +25,7 @@ The handwritten section was interesting because it was just an amalgamation of a
 The AI portion of this assignment was easy. All I had to do was copy and paste the AI section of the assignemnt into Gemini. The only hands on I had to do is tell the AI what I wanted the portfolio to look like. I chose red, white, and blue as the theme.
 
 ### [David Gomez] - AI Text Prompt CSS
-
+The AI portion was easy but I liked the output. I used chatgpt and gave it a very simple prompt. What is gave me was honestly better than I expected, even though my prompt wasn't too specific. My theme was more of a cool color theme, with blue and purple as the highlight since I like darker backgrounds, but with nice colors.
 
 ### [James Muhlenbruch] - AI Text Prompt CSS
 I found the Ai text promp CSS portion to be fairly easy, and was actually nice to manipulate
