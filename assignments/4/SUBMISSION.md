@@ -1,3 +1,11 @@
+Student Name: Angel T. Sandoval
+
+Student ID: 922793869
+
+Github Repository: https://github.com/AngelSFSU/CSC317
+
+Live Github Pages URL: https://angelsfsu.github.io/CSC317/assignments/4/index.html
+
 CSC 317 Assignment 4 Implementation choices
 
 1. Architecture and State Management
