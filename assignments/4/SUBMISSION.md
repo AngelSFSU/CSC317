@@ -1,0 +1,5 @@
+# CSC 317 Assignment 4 Implementation choices
+
+There are four cores that make the calculator. The first is the current input, showing the current integer on the screen/calculator. Second, is the previous input, the first operand is stored when an operator is pressed. Third, is the operation, which stores the arithmetic function (+, -, *, /). Lastly, fourth is the should reset display, which is a crucial boolean flag set to true after an operator or the equals sign is pressed, ensuring the next number input clears the screen instead of appending to the current number.
+
+Keyboard support is enabled for the purposes of the assignment requirements. All common inputs are present, i.e. numbers, operators, enter, and esc. Also when inputting zero as the second operand during any division problem, the result is an error,  which is displayed to the user, and all state variables are reset to null to lock the calculator until AC is pressed. Lastly, there is a input number function that prevents multiple decimal points from being allowed in the input of the calculator.
