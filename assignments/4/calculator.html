@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Style Calculator</title>
+    <link rel="stylesheet" href="styles/calculator.css">
+</head>
+<body>
+
+    <div class="calculator" id="calculator-container">
+
+        <div class="display">
+            <div id="display">0</div> 
+        </div>
+
+        <div class="buttons">
+
+            <button class="calc-button function" data-value="clear">AC</button>
+            <button class="calc-button function" data-value="negate">+/-</button>
+            <button class="calc-button function" data-value="percent">%</button>
+            <button class="calc-button operator" data-value="/">/</button>
+
+            <button class="calc-button number" data-value="7">7</button>
+            <button class="calc-button number" data-value="8">8</button>
+            <button class="calc-button number" data-value="9">9</button>
+            <button class="calc-button operator" data-value="*">x</button>
+
+            <button class="calc-button number" data-value="4">4</button>
+            <button class="calc-button number" data-value="5">5</button>
+            <button class="calc-button number" data-value="6">6</button>
+            <button class="calc-button operator" data-value="-">-</button>
+
+            <button class="calc-button number" data-value="1">1</button>
+            <button class="calc-button number" data-value="2">2</button>
+            <button class="calc-button number" data-value="3">3</button>
+            <button class="calc-button operator" data-value="+">+</button>
+
+            <button class="calc-button number zero-button" data-value="0">0</button>
+            <button class="calc-button number" data-value=".">.</button>
+            <button class="calc-button operator" data-value="equals">=</button>
+
+        </div>
+
+    </div>
+
+    <script src="scripts/calculator.js"></script>
+</body>
+</html>
