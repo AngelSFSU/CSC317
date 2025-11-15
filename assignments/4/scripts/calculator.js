@@ -12,11 +12,6 @@ function updateDisplay() {
     display.textContent = formattedInput;
 }
 
-/**
- * 
- * 
- * @param {string} number 
- */
 function inputNumber(number) {
     if (shouldResetDisplay) {
         currentInput = number === '.' ? '0.' : number;
@@ -39,7 +34,9 @@ function clearAll() {
     updateDisplay();
 
     const acButton = document.querySelector('[data-value="clear"]');
-    acButton.textContent = 'AC';
+    if (acButton) {
+        acButton.textContent = 'AC';
+    }
 }
 
 
@@ -49,17 +46,13 @@ function negate() {
         updateDisplay();
     }
 }
-  
+ 
 function percent() {
     const value = parseFloat(currentInput);
     currentInput = String(value / 100);
     updateDisplay();
 }
 
-/**
- * 
- * @param {string} nextOperation
- */
 function handleOperator(nextOperation) {
     const inputValue = parseFloat(currentInput);
 
@@ -76,13 +69,6 @@ function handleOperator(nextOperation) {
     updateDisplay();
 }
 
-/**
- 
-  @param {number} firstNum 
-  @param {string} operator 
-  @param {number} secondNum 
-  @returns {number|string} 
- */
 function calculate(firstNum, operator, secondNum) {
     const a = parseFloat(firstNum);
     const b = parseFloat(secondNum);
@@ -159,6 +145,45 @@ calculator.addEventListener('click', (event) => {
     } else {
         acButton.textContent = 'C';
     }
+});
+
+document.addEventListener('keydown', (event) => {
+    const key = event.key;
+    
+    if (['/', '*', '-', '+', 'Enter', 'Escape', '.'].includes(key)) {
+        event.preventDefault();
+    }
+
+    if (key >= '0' && key <= '9') {
+        inputNumber(key);
+    } else if (key === '.') {
+        inputNumber('.');
+    } else if (key === '+') {
+        handleOperator('+');
+    } else if (key === '-') {
+        handleOperator('-');
+    } else if (key === '*' || key === 'x') {
+        handleOperator('*');
+    } else if (key === '/') {
+        handleOperator('/');
+    } else if (key === 'Enter' || key === '=') {
+        handleEquals();
+    } else if (key === 'Escape' || key === 'c') {
+        clearAll();
+    } else if (key === '%') {
+        percent();
+    }
+
+    const acButton = document.querySelector('[data-value="clear"]');
+    if (acButton) {
+        if (currentInput === '0' && previousInput === null && operation === null) {
+            acButton.textContent = 'AC';
+        } else {
+            acButton.textContent = 'C';
+        }
+    }
+    
+    updateDisplay(); 
 });
 
 window.onload = updateDisplay;
