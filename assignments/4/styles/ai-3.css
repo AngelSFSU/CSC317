@@ -1,0 +1,203 @@
+/* ==============================================
+   AI-GENERATED CSS (ai-3.css)
+   Theme: Professional Tech – Navy & Gold
+   Typography: Montserrat / Open Sans
+   ============================================== */
+
+:root {
+  --navy: #0b132b;
+  --gold: #e0b84e;
+  --white: #ffffff;
+  --offwhite: #f5f5f5;
+  --text-light: #dfe3e8;
+  --transition: all 0.3s ease-in-out;
+}
+
+/* Base Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", "Open Sans", sans-serif;
+  background-color: var(--navy);
+  color: var(--offwhite);
+  line-height: 1.6;
+  padding-bottom: 4rem;
+  overflow-x: hidden;
+}
+
+/* ===============================
+   HEADER
+=============================== */
+header {
+  background: linear-gradient(180deg, #0b132b, #1c2541);
+  text-align: center;
+  padding: 5rem 2rem 3rem 2rem;
+  border-bottom: 2px solid var(--gold);
+  box-shadow: 0 0 25px rgba(224, 184, 78, 0.2);
+}
+
+header h1 {
+  color: var(--gold);
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+header p {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+/* ===============================
+   MAIN SECTIONS
+=============================== */
+main {
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section {
+  background-color: #1c2541;
+  border: 1px solid rgba(224, 184, 78, 0.25);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: var(--transition);
+}
+
+section:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: 0 0 20px rgba(224, 184, 78, 0.4);
+}
+
+section h2 {
+  color: var(--gold);
+  font-size: 1.8rem;
+  border-bottom: 2px solid var(--gold);
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+section p {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-bottom: 1.2rem;
+}
+
+section h3 {
+  color: var(--gold);
+  margin-top: 1.2rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+/* Skills List */
+ul {
+  list-style-type: square;
+  margin-left: 1.5rem;
+}
+
+li {
+  margin: 0.4rem 0;
+  color: var(--offwhite);
+  transition: var(--transition);
+}
+
+li:hover {
+  color: var(--gold);
+  transform: translateX(5px);
+}
+
+/* ===============================
+   PROFILE IMAGE (for future use)
+=============================== */
+.profile-img {
+  display: block;
+  margin: 2rem auto 1rem auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid var(--gold);
+  box-shadow: 0 0 15px rgba(224, 184, 78, 0.3);
+  transition: var(--transition);
+  object-fit: cover;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(224, 184, 78, 0.5);
+}
+
+/* ===============================
+   FOOTER
+=============================== */
+footer {
+  text-align: center;
+  background-color: #0b132b;
+  color: var(--text-light);
+  border-top: 1px solid rgba(224, 184, 78, 0.4);
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  position: relative;
+}
+
+footer p {
+  color: var(--offwhite);
+}
+
+footer a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+footer a:hover {
+  text-shadow: 0 0 6px var(--gold);
+}
+
+/* ===============================
+   ANIMATIONS & EFFECTS
+=============================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header, section, footer {
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+=============================== */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  main {
+    padding: 2rem 1rem;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+}

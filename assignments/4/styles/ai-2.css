@@ -1,0 +1,112 @@
+/* Vibrant Cool Theme: Blue + Purple + White */
+/* Author: AI-generated for CSC317 Group Portfolio */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1a1a40, #3b1c69, #0078d7);
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    padding: 2rem 1rem;
+    border-bottom: 2px solid #00aaff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    color: #b3d9ff;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #e6e6fa;
+}
+
+/* Main Section Styling */
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+/* Section Cards */
+section {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    color: #77ddff;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #66b3ff;
+    padding-bottom: 0.5rem;
+}
+
+p {
+    font-size: 1rem;
+    color: #f5f5f5;
+    margin: 1rem 0;
+}
+
+/* Skills List */
+h3 {
+    color: #c9a0ff;
+    margin-top: 1.2rem;
+    font-size: 1.3rem;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 1.5rem;
+}
+
+ul li {
+    color: #dfe6ff;
+    margin: 0.4rem 0;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: #aabbee;
+    border-top: 2px solid #66b2ff;
+}
+
+/* Links and Interactive Elements */
+a {
+    color: #99e6ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Optional: Image Styling (if added later) */
+img {
+    max-width: 100%;
+    border-radius: 10px;
+    display: block;
+    margin: 1rem auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
