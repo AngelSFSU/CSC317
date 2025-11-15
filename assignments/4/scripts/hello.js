@@ -1,9 +1,10 @@
-const language = "JavaScript";
+const nameToGreet = "World"; 
 
-const greet = (name) => {
-    const message = `Hello, ${name}!`; 
+const createMessage = (name) => {
+
+    const message = `Hello, ${name}! The button was clicked at ${new Date().toLocaleTimeString()}.`;
     
     return message;
 };
 
-console.log(greet(language));
+console.log(createMessage("JavaScript"));
