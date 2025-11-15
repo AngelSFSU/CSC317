@@ -96,3 +96,16 @@ body {
 .back-link:hover {
     text-decoration: underline;
 }
+
+
+.back-link {
+    display: block !important; 
+    
+    color: #FFFFFF !important; 
+    
+    z-index: 100 !important; 
+    
+    font-size: 1.2em !important; 
+    
+    padding: 10px 0;
+}
