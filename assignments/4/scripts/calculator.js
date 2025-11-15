@@ -14,6 +14,10 @@ function updateDisplay() {
 
 function inputNumber(number) {
     if (shouldResetDisplay) {
+        if (operation === null && previousInput !== null) {
+            previousInput = null;
+        }
+        
         currentInput = number === '.' ? '0.' : number;
         shouldResetDisplay = false;
     } else if (currentInput === '0' && number !== '.') {
@@ -63,6 +67,13 @@ function handleOperator(nextOperation) {
         currentInput = String(result);
         previousInput = result;
     }
+    
+    if (currentInput === 'Error') {
+        previousInput = null;
+        operation = null;
+        shouldResetDisplay = true;
+        return;
+    }
 
     operation = nextOperation;
     shouldResetDisplay = true;
@@ -93,17 +104,20 @@ function handleEquals() {
         return;
     }
 
-    const result = calculate(previousInput, operation, parseFloat(currentInput));
+    const storedOperation = operation;
+    const currentInputValue = parseFloat(currentInput);
+    
+    operation = null;
+
+    const result = calculate(previousInput, storedOperation, currentInputValue);
 
     if (result === 'Error') {
         currentInput = 'Error';
         previousInput = null;
-        operation = null;
         shouldResetDisplay = true;
     } else {
         currentInput = String(result);
         previousInput = parseFloat(currentInput);
-        operation = null;
         shouldResetDisplay = true;
     }
 
