@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title><%= category %> Quiz</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1><%= category %> Quiz</h1>
+    <div id="quiz-box"></div>
+
+    <button id="nextBtn" onclick="nextQuestion()">Next</button>
+</div>
+
+<script>
+    const CATEGORY = "<%= category %>";
+</script>
+<script src="/js/quiz.js"></script>
+
+</body>
+</html>
