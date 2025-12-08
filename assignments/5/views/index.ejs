@@ -2,25 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>BrainBreaker Trivia</title>
+    <title>Who Wants to Be a Billionaire?</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-
 <div class="container">
-    <h1>BrainBreaker Trivia</h1>
-    <p>Select a category to begin:</p>
 
-    <form action="/quiz" method="GET">
-        <select name="category" required>
-            <option value="">-- Choose Category --</option>
-            <option value="Math">Math</option>
-            <option value="Science">Science</option>
-            <option value="History">History</option>
-        </select>
-        <button type="submit">Start Game</button>
-    </form>
+    <div class="logo">
+        <div class="logo-badge">
+            <span class="ring"></span>
+            <span>Who Wants to Be a</span>
+        </div>
+        <h1>Billionaire?</h1>
+    </div>
+
+    <section class="rules">
+        <h2>How the Game Works</h2>
+        <ul>
+            <li>15 questions stand between you and <strong>$1,000,000,000</strong>.</li>
+            <li>Questions get harder: <strong>5 Easy</strong>, <strong>5 Medium</strong>, <strong>4 Hard</strong>, and the final <strong>Billionaire Question</strong>.</li>
+            <li>Each question has <strong>4 options</strong>; only one is correct.</li>
+            <li>You have <strong>three 50/50 lifelines</strong>. Each one removes two wrong answers for the current question.</li>
+            <li>Reach question <strong>5</strong> and you are guaranteed <strong>$1,000</strong>.</li>
+            <li>Reach question <strong>10</strong> and you are guaranteed <strong>$32,000</strong>.</li>
+            <li>Miss a question and you drop down to your last guaranteed amount.</li>
+        </ul>
+    </section>
+
+    <div class="start-wrap">
+        <a href="/quiz" class="button-link">Play</a>
+    </div>
+
 </div>
-
 </body>
 </html>

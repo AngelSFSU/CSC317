@@ -1,23 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><%= category %> Quiz</title>
+    <title>Who Wants to Be a Billionaire? – Game</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+<div class="container game-container">
 
-<div class="container">
-    <h1><%= category %> Quiz</h1>
-    <div id="quiz-box"></div>
+    <div class="game-layout">
+        <!-- Main area -->
+        <main class="game-main">
+            <div class="logo small">
+                <div class="logo-badge">
+                    <span class="ring"></span>
+                    <span>Billionaire Game</span>
+                </div>
+                <h1>Question <span id="questionNumber">1</span> of 15</h1>
+                <p class="subtitle">Lock in your answer. Use 50/50 if you’re stuck.</p>
+            </div>
 
-    <button id="nextBtn" onclick="nextQuestion()">Next</button>
+            <div id="statusBar">
+                <p>Current Amount: <span id="currentAmount">$0</span></p>
+                <p>Guaranteed: <span id="guaranteedAmount">$0</span></p>
+            </div>
+
+            <div id="quiz-box"></div>
+
+            <div class="controls">
+                <button type="button" id="lifelineBtn" onclick="useFiftyFifty()">50/50 (x3)</button>
+                <button type="button" id="finalBtn" onclick="submitAnswer()">Final Answer</button>
+            </div>
+        </main>
+
+        <!-- Ladder -->
+        <aside class="ladder">
+            <ul>
+                <li class="ladder-item" data-q="15">$1,000,000,000</li>
+                <li class="ladder-item" data-q="14">$500,000</li>
+                <li class="ladder-item" data-q="13">$250,000</li>
+                <li class="ladder-item" data-q="12">$125,000</li>
+                <li class="ladder-item" data-q="11">$64,000</li>
+                <li class="ladder-item guarantee" data-q="10">$32,000</li>
+                <li class="ladder-item" data-q="9">$16,000</li>
+                <li class="ladder-item" data-q="8">$8,000</li>
+                <li class="ladder-item" data-q="7">$4,000</li>
+                <li class="ladder-item" data-q="6">$2,000</li>
+                <li class="ladder-item guarantee" data-q="5">$1,000</li>
+                <li class="ladder-item" data-q="4">$500</li>
+                <li class="ladder-item" data-q="3">$300</li>
+                <li class="ladder-item" data-q="2">$200</li>
+                <li class="ladder-item" data-q="1">$100</li>
+            </ul>
+        </aside>
+    </div>
+
 </div>
 
-<script>
-    const CATEGORY = "<%= category %>";
-</script>
 <script src="/js/quiz.js"></script>
-
 </body>
 </html>

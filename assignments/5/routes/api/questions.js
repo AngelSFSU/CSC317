@@ -1,22 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const { loadQuestionsByCategory } = require("../../models/questionModel");
+const { loadAllQuestions } = require("../../models/questionModel");
 
-// GET /api/questions?category=Math
-router.get("/", async (req, res) => {
-    const category = req.query.category;
-
-    if (!category) {
-        return res.status(400).json({ error: "Category is required." });
+router.get("/", (req, res) => {
+    const data = loadAllQuestions();
+    if (!data) {
+        return res.status(500).json({ error: "Could not load questions." });
     }
-
-    const questions = await loadQuestionsByCategory(category);
-
-    if (!questions) {
-        return res.status(404).json({ error: "Category not found." });
-    }
-
-    res.json({ questions });
+    res.json(data);
 });
 
 module.exports = router;

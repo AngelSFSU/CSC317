@@ -1,38 +1,292 @@
+/* ===== Reset ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== Base ===== */
 body {
-    background: #f5f5f5;
-    font-family: Arial, sans-serif;
-    text-align: center;
+    min-height: 100vh;
+    font-family: "Trebuchet MS", "Verdana", sans-serif;
+    background: radial-gradient(circle at top, #243b6b 0%, #050d24 45%, #000000 100%);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .container {
-    margin: 50px auto;
-    width: 80%;
-    max-width: 600px;
+    width: 95%;
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 24px 28px 32px;
+    background: radial-gradient(circle at top, rgba(25, 46, 106, 0.95), rgba(5, 10, 30, 0.98));
+    border-radius: 24px;
+    box-shadow:
+        0 0 35px rgba(0, 0, 0, 0.9),
+        0 0 20px rgba(34, 201, 255, 0.6);
 }
 
-h1 {
-    margin-bottom: 20px;
+/* ===== Logo / Header ===== */
+.logo {
+    text-align: center;
+    margin-bottom: 18px;
 }
 
-button {
-    padding: 10px 20px;
-    margin-top: 20px;
-    font-size: 18px;
+.logo.small {
+    margin-bottom: 12px;
+}
+
+.logo-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #fbd85c, #27d1ff);
+    color: #07112c;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    font-size: 0.75rem;
+    box-shadow: 0 0 16px rgba(251, 216, 92, 0.9);
+    margin-bottom: 6px;
+}
+
+.logo-badge .ring {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #07112c;
+    box-shadow: 0 0 10px rgba(7, 17, 44, 0.8);
+}
+
+.logo h1 {
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    text-shadow:
+        0 0 8px rgba(0, 0, 0, 0.9),
+        0 0 20px rgba(39, 209, 255, 0.8);
+}
+
+.subtitle {
+    margin-top: 4px;
+    font-size: 0.9rem;
+    color: #d9e6ff;
+}
+
+/* ===== Rules ===== */
+.rules {
+    margin-top: 18px;
+    font-size: 0.95rem;
+}
+
+.rules h2 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.rules ul {
+    list-style: disc;
+    margin-left: 22px;
+}
+
+.rules li {
+    margin-bottom: 6px;
+}
+
+/* ===== Buttons ===== */
+button,
+.button-link {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 26px;
+    border-radius: 999px;
+    border: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
     cursor: pointer;
+    text-decoration: none;
+    color: #07112c;
+    background: linear-gradient(135deg, #fbd85c, #27d1ff);
+    box-shadow:
+        0 4px 0 rgba(95, 80, 5, 0.9),
+        0 0 16px rgba(39, 209, 255, 0.8);
+    transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.1s ease;
+}
+
+button:hover,
+.button-link:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.1);
+}
+
+button:active,
+.button-link:active {
+    transform: translateY(1px);
+    box-shadow:
+        0 2px 0 rgba(95, 80, 5, 0.9),
+        0 0 10px rgba(39, 209, 255, 0.7);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: default;
+    box-shadow: none;
+}
+
+/* ===== Start wrap ===== */
+.start-wrap {
+    text-align: center;
+    margin-top: 22px;
+}
+
+/* ===== Game Layout ===== */
+.game-container {
+    max-width: 1100px;
+}
+
+.game-layout {
+    display: flex;
+    gap: 24px;
+    margin-top: 8px;
+}
+
+.game-main {
+    flex: 2;
+}
+
+.ladder {
+    flex: 1;
+    border-left: 2px solid rgba(244, 215, 83, 0.5);
+    padding-left: 18px;
+}
+
+#statusBar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: #ffe58a;
+}
+
+/* ===== Question & Options ===== */
+#quiz-box h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
 }
 
 .option {
     display: block;
-    margin: 10px;
-    padding: 10px;
-    background: white;
-    border-radius: 5px;
+    margin: 8px 0;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: radial-gradient(circle at left, rgba(34, 201, 255, 0.35), rgba(11, 19, 54, 0.95));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.option input {
+    margin-right: 8px;
+}
+
+.option:hover {
+    background: radial-gradient(circle at left, rgba(251, 216, 92, 0.45), rgba(11, 19, 54, 0.98));
+    box-shadow: 0 0 10px rgba(251, 216, 92, 0.8);
+    transform: translateY(-1px);
+}
+
+.disabled-option {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Controls under question */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+/* ===== Ladder ===== */
+.ladder ul {
+    list-style: none;
+}
+
+.ladder-item {
+    padding: 4px 10px;
+    margin-bottom: 4px;
+    border-radius: 14px;
+    font-size: 0.86rem;
+    text-align: right;
+    background: rgba(13, 21, 53, 0.95);
+    color: #f0f2ff;
+    border: 1px solid transparent;
+    transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.ladder-item.guarantee {
+    color: #fbd85c;
+    font-weight: 700;
+}
+
+.ladder-item.active {
+    background: linear-gradient(135deg, #fbd85c, #27d1ff);
+    color: #07112c;
+    box-shadow: 0 0 14px rgba(39, 209, 255, 0.9);
+    transform: scale(1.04);
+}
+
+.ladder-item.passed {
+    opacity: 0.6;
+}
+
+/* ===== Result page ===== */
+.result-text {
+    margin-top: 18px;
+    font-size: 1.1rem;
 }
 
 .success {
-    color: green;
+    margin-top: 10px;
+    font-size: 1.4rem;
+    color: #4dff88;
+    text-shadow: 0 0 12px rgba(77, 255, 136, 0.9);
 }
 
 .fail {
-    color: red;
+    margin-top: 10px;
+    font-size: 1.3rem;
+    color: #ff8585;
+    text-shadow: 0 0 12px rgba(255, 133, 133, 0.9);
+}
+
+.result-actions {
+    margin-top: 24px;
+    text-align: center;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 800px) {
+    .game-layout {
+        flex-direction: column-reverse;
+    }
+
+    .ladder {
+        border-left: none;
+        border-top: 2px solid rgba(244, 215, 83, 0.5);
+        padding-left: 0;
+        padding-top: 12px;
+    }
+
+    .ladder-item {
+        text-align: center;
+    }
 }

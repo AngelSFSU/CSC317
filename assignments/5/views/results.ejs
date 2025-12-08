@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Results • BrainBreaker</title>
+    <title>Billionaire Results</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
@@ -10,21 +10,20 @@
 
     <div class="logo">
         <div class="logo-badge">
-            <span class="apple"></span>
-            <span>Quiz Results</span>
+            <span class="ring"></span>
+            <span>Game Over</span>
         </div>
-        <h1>How Did You Do?</h1>
+        <h1><%= status === "win" ? "You Did It!" : "Better Luck Next Time" %></h1>
     </div>
 
     <p class="result-text">
-        Category: <strong><%= category %></strong><br>
-        You scored <strong><%= score %></strong> out of <strong><%= total %></strong>.
+        You walk away with: <strong>$<%= earned %></strong>
     </p>
 
-    <% if (score >= total / 2) { %>
-        <h2 class="success">You passed! 🎉</h2>
+    <% if (status === "win") { %>
+        <h2 class="success">You are officially a Billionaire! 💰</h2>
     <% } else { %>
-        <h2 class="fail">You failed this round. 😢</h2>
+        <h2 class="fail">You didn’t reach the top, but you kept your guaranteed winnings.</h2>
     <% } %>
 
     <div class="result-actions">

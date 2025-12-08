@@ -1,16 +1,15 @@
 const fs = require("fs");
 const path = require("path");
 
-function loadQuestionsByCategory(category) {
+function loadAllQuestions() {
     try {
         const filePath = path.join(__dirname, "../utils/questions.json");
-        const data = JSON.parse(fs.readFileSync(filePath, "utf8"));
-
-        return data[category] || null;
-    } catch (error) {
-        console.error("Error loading questions:", error);
+        const raw = fs.readFileSync(filePath, "utf8");
+        return JSON.parse(raw);
+    } catch (err) {
+        console.error("Error loading questions.json:", err);
         return null;
     }
 }
 
-module.exports = { loadQuestionsByCategory };
+module.exports = { loadAllQuestions };
