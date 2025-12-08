@@ -1,25 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Results</title>
+    <title>Results • BrainBreaker</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-
 <div class="container">
-    <h1>Your Results</h1>
 
-    <p>You scored <%= score %> out of <%= total %>.</p>
+    <div class="logo">
+        <div class="logo-badge">
+            <span class="apple"></span>
+            <span>Quiz Results</span>
+        </div>
+        <h1>How Did You Do?</h1>
+    </div>
+
+    <p class="result-text">
+        Category: <strong><%= category %></strong><br>
+        You scored <strong><%= score %></strong> out of <strong><%= total %></strong>.
+    </p>
 
     <% if (score >= total / 2) { %>
         <h2 class="success">You passed! 🎉</h2>
     <% } else { %>
-        <h2 class="fail">You failed. 😢</h2>
+        <h2 class="fail">You failed this round. 😢</h2>
     <% } %>
 
-    <a href="/">Play Again</a>
-</div>
+    <div class="result-actions">
+        <a href="/" class="button-link">Play Again</a>
+    </div>
 
+</div>
 </body>
 </html>
