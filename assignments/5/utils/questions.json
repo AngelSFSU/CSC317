@@ -1,266 +1,244 @@
 {
-  "Math": [
+  "easy": [
     {
-      "question": "What is the least common multiple (LCM) of 6 and 8?",
-      "choices": ["16", "20", "24", "18"],
-      "answer": "24"
+      "question": "What is 9 + 6?",
+      "choices": ["13", "14", "15", "16"],
+      "answer": "15"
     },
     {
-      "question": "A rectangle is 8 units long and 3 units wide. What is its area?",
-      "choices": ["11", "24", "16", "32"],
-      "answer": "24"
+      "question": "Which planet is known as the Red Planet?",
+      "choices": ["Mars", "Venus", "Jupiter", "Mercury"],
+      "answer": "Mars"
     },
     {
-      "question": "What is 3/4 written as a decimal?",
-      "choices": ["0.25", "0.5", "0.75", "0.8"],
-      "answer": "0.75"
-    },
-    {
-      "question": "A jar has 150 candies. If 2/5 are eaten, how many remain?",
-      "choices": ["60", "90", "75", "100"],
-      "answer": "90"
-    },
-    {
-      "question": "Which number is a prime number?",
-      "choices": ["21", "17", "25", "27"],
-      "answer": "17"
-    },
-    {
-      "question": "What is 12 × 11?",
-      "choices": ["121", "132", "99", "144"],
-      "answer": "132"
-    },
-    {
-      "question": "What is the perimeter of a square with side length 9?",
-      "choices": ["18", "27", "36", "45"],
-      "answer": "36"
-    },
-    {
-      "question": "What is 5.67 rounded to the nearest tenth?",
-      "choices": ["5.6", "5.7", "6.0", "5.8"],
-      "answer": "5.7"
-    },
-    {
-      "question": "If a pizza is cut into 8 slices and you eat 3, what fraction is left?",
-      "choices": ["3/8", "5/8", "1/2", "2/3"],
-      "answer": "5/8"
-    },
-    {
-      "question": "What is the value of 4³?",
-      "choices": ["12", "64", "16", "32"],
-      "answer": "64"
-    }
-  ],
-
-  "Science": [
-    {
-      "question": "What force pulls objects toward Earth's center?",
-      "choices": ["Magnetism", "Friction", "Gravity", "Energy"],
-      "answer": "Gravity"
-    },
-    {
-      "question": "What part of a plant makes food through photosynthesis?",
-      "choices": ["Roots", "Stem", "Leaves", "Flowers"],
-      "answer": "Leaves"
-    },
-    {
-      "question": "Which planet is known for its rings?",
-      "choices": ["Mars", "Saturn", "Jupiter", "Neptune"],
-      "answer": "Saturn"
-    },
-    {
-      "question": "What is H₂O more commonly known as?",
-      "choices": ["Oxygen", "Water", "Hydrogen", "Salt"],
-      "answer": "Water"
-    },
-    {
-      "question": "What gas do humans breathe in to survive?",
-      "choices": ["Nitrogen", "Oxygen", "Helium", "Carbon Dioxide"],
-      "answer": "Oxygen"
-    },
-    {
-      "question": "What is the basic unit of life?",
-      "choices": ["Tissue", "Organ", "Cell", "Atom"],
-      "answer": "Cell"
-    },
-    {
-      "question": "What causes day and night on Earth?",
-      "choices": ["Revolution", "Rotation", "Orbiting the Moon", "Changing Seasons"],
-      "answer": "Rotation"
-    },
-    {
-      "question": "What tool do scientists use to measure temperature?",
-      "choices": ["Barometer", "Thermometer", "Scale", "Meter Stick"],
-      "answer": "Thermometer"
-    },
-    {
-      "question": "What type of energy comes from the sun?",
-      "choices": ["Thermal", "Solar", "Chemical", "Mechanical"],
-      "answer": "Solar"
-    },
-    {
-      "question": "What organ pumps blood through your body?",
-      "choices": ["Liver", "Lungs", "Heart", "Kidneys"],
-      "answer": "Heart"
-    }
-  ],
-
-  "History": [
-    {
-      "question": "Who wrote the Declaration of Independence?",
-      "choices": ["George Washington", "Benjamin Franklin", "Thomas Jefferson", "John Adams"],
-      "answer": "Thomas Jefferson"
-    },
-    {
-      "question": "What ancient civilization built the pyramids?",
-      "choices": ["Romans", "Egyptians", "Greeks", "Aztecs"],
-      "answer": "Egyptians"
-    },
-    {
-      "question": "Who was the first President of the United States?",
-      "choices": ["Thomas Jefferson", "George Washington", "Abraham Lincoln", "James Madison"],
-      "answer": "George Washington"
-    },
-    {
-      "question": "What war was fought between the North and South regions of the U.S.?",
-      "choices": ["World War II", "Civil War", "Revolutionary War", "Mexican-American War"],
-      "answer": "Civil War"
-    },
-    {
-      "question": "What year did Christopher Columbus arrive in the Americas?",
-      "choices": ["1492", "1620", "1405", "1550"],
-      "answer": "1492"
-    },
-    {
-      "question": "Which ancient civilization invented democracy?",
-      "choices": ["Egypt", "Rome", "China", "Greece"],
-      "answer": "Greece"
-    },
-    {
-      "question": "The Statue of Liberty was a gift from which country?",
-      "choices": ["England", "France", "Germany", "Spain"],
-      "answer": "France"
-    },
-    {
-      "question": "What do we call the journey that slaves were forced to take across the Atlantic Ocean?",
-      "choices": ["Silk Road", "Great Migration", "Middle Passage", "Freedom Trail"],
-      "answer": "Middle Passage"
-    },
-    {
-      "question": "Who invented the lightbulb?",
-      "choices": ["Nikola Tesla", "Thomas Edison", "Alexander Bell", "Ben Franklin"],
-      "answer": "Thomas Edison"
-    },
-    {
-      "question": "Which U.S. holiday celebrates gratitude and the autumn harvest?",
-      "choices": ["Independence Day", "Memorial Day", "Thanksgiving", "Labor Day"],
-      "answer": "Thanksgiving"
-    }
-  ],
-
-  "English": [
-    {
-      "question": "Which word is a synonym for 'brave'?",
-      "choices": ["Scared", "Courageous", "Weak", "Worried"],
-      "answer": "Courageous"
-    },
-    {
-      "question": "What is the subject of the sentence: 'The dog ran across the yard'?",
-      "choices": ["ran", "yard", "dog", "across"],
-      "answer": "dog"
-    },
-    {
-      "question": "What is the prefix in the word 'unkind'?",
-      "choices": ["un", "kind", "nk", "ind"],
-      "answer": "un"
-    },
-    {
-      "question": "Which sentence is written in past tense?",
-      "choices": ["I eat breakfast.", "I will eat breakfast.", "I am eating breakfast.", "I ate breakfast."],
-      "answer": "I ate breakfast."
-    },
-    {
-      "question": "What type of figurative language is 'He is as fast as lightning'?",
-      "choices": ["Metaphor", "Simile", "Hyperbole", "Personification"],
-      "answer": "Simile"
-    },
-    {
-      "question": "What punctuation ends a question?",
-      "choices": ["Period", "Comma", "Question mark", "Exclamation mark"],
-      "answer": "Question mark"
-    },
-    {
-      "question": "What is the main idea of a paragraph?",
-      "choices": ["The funniest sentence", "The most descriptive sentence", "The central point", "The conclusion"],
-      "answer": "The central point"
-    },
-    {
-      "question": "What is an antonym for 'ancient'?",
-      "choices": ["Old", "Historic", "Modern", "Classic"],
-      "answer": "Modern"
-    },
-    {
-      "question": "Which word is an adjective?",
-      "choices": ["Run", "Blue", "Quickly", "Tomorrow"],
-      "answer": "Blue"
-    },
-    {
-      "question": "What do we call the person who tells the story?",
-      "choices": ["Author", "Writer", "Narrator", "Speaker"],
-      "answer": "Narrator"
-    }
-  ],
-
-  "Geography": [
-    {
-      "question": "What is the longest river in the world?",
-      "choices": ["Amazon River", "Mississippi River", "Nile River", "Yangtze River"],
-      "answer": "Nile River"
+      "question": "How many sides does a triangle have?",
+      "choices": ["2", "3", "4", "5"],
+      "answer": "3"
     },
     {
       "question": "What is the capital of the United States?",
-      "choices": ["New York", "Philadelphia", "Washington, D.C.", "Boston"],
+      "choices": ["New York", "Washington, D.C.", "Boston", "Chicago"],
       "answer": "Washington, D.C."
     },
     {
-      "question": "Which continent is also a country?",
-      "choices": ["Asia", "Australia", "Africa", "South America"],
-      "answer": "Australia"
+      "question": "Which animal is known as 'man's best friend'?",
+      "choices": ["Cat", "Dog", "Horse", "Rabbit"],
+      "answer": "Dog"
     },
     {
-      "question": "What ocean is on the East Coast of the United States?",
-      "choices": ["Indian Ocean", "Arctic Ocean", "Pacific Ocean", "Atlantic Ocean"],
-      "answer": "Atlantic Ocean"
+      "question": "How many minutes are in one hour?",
+      "choices": ["30", "45", "60", "90"],
+      "answer": "60"
     },
     {
-      "question": "Mount Everest is located in which mountain range?",
-      "choices": ["Andes", "Himalayas", "Rockies", "Alps"],
-      "answer": "Himalayas"
+      "question": "Which shape has four equal sides and four right angles?",
+      "choices": ["Triangle", "Circle", "Square", "Pentagon"],
+      "answer": "Square"
     },
     {
-      "question": "What is the largest desert in the world?",
-      "choices": ["Sahara", "Gobi", "Antarctic Desert", "Arabian"],
-      "answer": "Antarctic Desert"
+      "question": "What do bees make?",
+      "choices": ["Milk", "Honey", "Oil", "Salt"],
+      "answer": "Honey"
     },
     {
-      "question": "Which U.S. state is known as the Sunshine State?",
-      "choices": ["Texas", "California", "Florida", "Nevada"],
-      "answer": "Florida"
+      "question": "Which ocean is on the West Coast of the United States?",
+      "choices": ["Atlantic", "Indian", "Pacific", "Arctic"],
+      "answer": "Pacific"
     },
     {
-      "question": "Which country is directly north of the United States?",
-      "choices": ["Canada", "Mexico", "Greenland", "Iceland"],
+      "question": "Which color is made by mixing red and blue?",
+      "choices": ["Green", "Purple", "Orange", "Yellow"],
+      "answer": "Purple"
+    },
+    {
+      "question": "How many days are in a leap year?",
+      "choices": ["364", "365", "366", "367"],
+      "answer": "366"
+    },
+    {
+      "question": "What gas do humans need in order to breathe?",
+      "choices": ["Helium", "Oxygen", "Carbon Dioxide", "Nitrogen"],
+      "answer": "Oxygen"
+    },
+    {
+      "question": "What is the main language spoken in Mexico?",
+      "choices": ["French", "English", "Spanish", "Portuguese"],
+      "answer": "Spanish"
+    },
+    {
+      "question": "Which season comes after summer?",
+      "choices": ["Winter", "Spring", "Autumn (Fall)", "Summer again"],
+      "answer": "Autumn (Fall)"
+    },
+    {
+      "question": "How many legs does a spider have?",
+      "choices": ["6", "8", "10", "12"],
+      "answer": "8"
+    }
+  ],
+  "medium": [
+    {
+      "question": "Which country has the longest coastline in the world?",
+      "choices": ["Russia", "Australia", "Canada", "Indonesia"],
       "answer": "Canada"
     },
     {
-      "question": "Which of these is one of the Great Lakes?",
-      "choices": ["Lake Tahoe", "Lake Ontario", "Lake Salt", "Lake Okeechobee"],
-      "answer": "Lake Ontario"
+      "question": "What is the smallest unit of matter that retains the chemical properties of an element?",
+      "choices": ["Atom", "Molecule", "Proton", "Cell"],
+      "answer": "Atom"
     },
     {
-      "question": "What line divides the Earth into Northern and Southern Hemispheres?",
-      "choices": ["Prime Meridian", "Equator", "Tropic of Cancer", "International Date Line"],
-      "answer": "Equator"
+      "question": "Which war officially ended with the Treaty of Paris in 1783?",
+      "choices": ["French and Indian War", "War of 1812", "American Revolutionary War", "Seven Years' War"],
+      "answer": "American Revolutionary War"
+    },
+    {
+      "question": "What is the powerhouse of the cell?",
+      "choices": ["Nucleus", "Ribosome", "Mitochondrion", "Golgi apparatus"],
+      "answer": "Mitochondrion"
+    },
+    {
+      "question": "Which temperature scale sets absolute zero at 0?",
+      "choices": ["Celsius", "Fahrenheit", "Kelvin", "Rankine"],
+      "answer": "Kelvin"
+    },
+    {
+      "question": "What type of rock is formed from cooled magma or lava?",
+      "choices": ["Sedimentary", "Igneous", "Metamorphic", "Basaltic"],
+      "answer": "Igneous"
+    },
+    {
+      "question": "Which U.S. state has the highest number of active volcanoes?",
+      "choices": ["Hawaii", "California", "Alaska", "Washington"],
+      "answer": "Alaska"
+    },
+    {
+      "question": "What part of the brain controls balance and coordination?",
+      "choices": ["Cerebrum", "Cerebellum", "Brain stem", "Amygdala"],
+      "answer": "Cerebellum"
+    },
+    {
+      "question": "How many amendments are in the Bill of Rights?",
+      "choices": ["5", "10", "12", "15"],
+      "answer": "10"
+    },
+    {
+      "question": "Which gas is the most abundant in Earth's atmosphere?",
+      "choices": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Argon"],
+      "answer": "Nitrogen"
+    },
+    {
+      "question": "What is the longest bone in the human body?",
+      "choices": ["Tibia", "Femur", "Humerus", "Pelvis"],
+      "answer": "Femur"
+    },
+    {
+      "question": "Which African river is the world’s deepest?",
+      "choices": ["Nile", "Congo River", "Niger River", "Zambezi"],
+      "answer": "Congo River"
+    },
+    {
+      "question": "Which early civilization invented the first known writing system?",
+      "choices": ["Egyptians", "Sumerians", "Indus Valley", "Phoenicians"],
+      "answer": "Sumerians"
+    },
+    {
+      "question": "Which scientist first proposed the three laws of motion?",
+      "choices": ["Einstein", "Faraday", "Newton", "Galileo"],
+      "answer": "Newton"
+    },
+    {
+      "question": "What is the term for a species that is found only in one specific geographic area?",
+      "choices": ["Invasive", "Indigenous", "Endemic", "Exotic"],
+      "answer": "Endemic"
     }
-  ]
+  ],
+  "hard": [
+    {
+      "question": "What phenomenon explains why light bends when it passes through materials of different densities?",
+      "choices": ["Reflection", "Refraction", "Diffraction", "Dispersion"],
+      "answer": "Refraction"
+    },
+    {
+      "question": "Which Chinese dynasty built the majority of what is now the Great Wall of China?",
+      "choices": ["Qin", "Han", "Ming", "Tang"],
+      "answer": "Ming"
+    },
+    {
+      "question": "Which organelle is responsible for packaging and transporting proteins inside the cell?",
+      "choices": ["Golgi apparatus", "Lysosome", "Endoplasmic reticulum", "Cytoskeleton"],
+      "answer": "Golgi apparatus"
+    },
+    {
+      "question": "What is the only metal that is liquid at room temperature?",
+      "choices": ["Mercury", "Gallium", "Sodium", "Cesium"],
+      "answer": "Mercury"
+    },
+    {
+      "question": "What is the name of the supercontinent that existed roughly 300 million years ago?",
+      "choices": ["Laurasia", "Pangaea", "Gondwana", "Rodinia"],
+      "answer": "Pangaea"
+    },
+    {
+      "question": "What is the term for a molecule with both hydrophilic and hydrophobic ends?",
+      "choices": ["Isomer", "Amphipathic", "Ionic", "Chiral"],
+      "answer": "Amphipathic"
+    },
+    {
+      "question": "Which ancient mathematician is known as the 'Father of Geometry'?",
+      "choices": ["Pythagoras", "Euclid", "Archimedes", "Eratosthenes"],
+      "answer": "Euclid"
+    },
+    {
+      "question": "What is the second longest river in South America?",
+      "choices": ["Amazon River", "Paraná River", "Orinoco River", "Rio Negro"],
+      "answer": "Paraná River"
+    },
+    {
+      "question": "Which scientist discovered radioactivity?",
+      "choices": ["Marie Curie", "Henri Becquerel", "Rutherford", "Niels Bohr"],
+      "answer": "Henri Becquerel"
+    },
+    {
+      "question": "What term describes the ability of an organism to maintain a stable internal environment?",
+      "choices": ["Metabolism", "Osmosis", "Homeostasis", "Equilibrium"],
+      "answer": "Homeostasis"
+    },
+    {
+      "question": "Which civilization invented the concept of zero?",
+      "choices": ["Romans", "Greeks", "Mayans", "Phoenicians"],
+      "answer": "Mayans"
+    },
+    {
+      "question": "Which U.S. Supreme Court case established judicial review?",
+      "choices": ["Brown v. Board", "Marbury v. Madison", "Roe v. Wade", "Gibbons v. Ogden"],
+      "answer": "Marbury v. Madison"
+    },
+    {
+      "question": "What is the deepest point in the Earth's oceans?",
+      "choices": ["Tonga Trench", "Puerto Rico Trench", "Mariana Trench", "Java Trench"],
+      "answer": "Mariana Trench"
+    },
+    {
+      "question": "What branch of physics studies motion without regard to force?",
+      "choices": ["Dynamics", "Kinematics", "Thermodynamics", "Statics"],
+      "answer": "Kinematics"
+    },
+    {
+      "question": "Which gas makes up about 21% of Earth’s atmosphere?",
+      "choices": ["Nitrogen", "Oxygen", "Carbon Dioxide", "Neon"],
+      "answer": "Oxygen"
+    }
+  ],
+
+  "billionaire": {
+    "question": "Elite ball knowledge: Who is the only NBA player to win the regular-season MVP, Defensive Player of the Year, and Finals MVP awards all in the same season?",
+    "choices": [
+      "Michael Jordan",
+      "Hakeem Olajuwon",
+      "LeBron James",
+      "Kawhi Leonard"
+    ],
+    "answer": "Hakeem Olajuwon"
+  }
 }
