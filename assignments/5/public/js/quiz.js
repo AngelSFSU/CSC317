@@ -25,6 +25,13 @@ let currentIndex = 0;
 let currentEarnings = 0;
 let guaranteedEarnings = 0;
 
+const sfx = {
+    lock: new Audio("/sounds/lock-in.mp3"),
+    correct: new Audio("/sounds/correct.mp3"),
+    wrong: new Audio("/sounds/wrong.mp3"),
+    lifeline: new Audio("/sounds/lifeline.mp3")
+};
+
 let lifelinesRemaining = 3;
 let lifelineUsedThisQuestion = false;
 
