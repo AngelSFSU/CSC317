@@ -69,32 +69,33 @@ function pickRandom(array, count) {
 }
 
 function renderQuestion() {
-    lifelineUsedThisQuestion = false;
-
-    const qData = questions[currentIndex];
     const quizBox = document.getElementById("quiz-box");
-    const qNumber = currentIndex + 1;
 
-    document.getElementById("questionNumber").textContent = qNumber;
+    // Fade-out before changing question
+    quizBox.classList.add("fade-out");
 
-    quizBox.innerHTML = `
-        <h2>${qData.question}</h2>
-        ${qData.choices.map((choice, idx) => `
-            <label class="option">
-                <input type="radio" name="answer" value="${choice}">
-                <span>${String.fromCharCode(65 + idx)}. ${choice}</span>
-            </label>
-        `).join("")}
-    `;
+    setTimeout(() => {
+        const qData = questions[currentIndex];
 
-    // reset disabled visual from any previous question
-    const lifelineBtn = document.getElementById("lifelineBtn");
-    lifelineBtn.disabled = lifelinesRemaining === 0;
-    lifelineBtn.textContent = `50/50 (x${lifelinesRemaining})`;
+        quizBox.innerHTML = `
+            <h2>${qData.question}</h2>
+            ${qData.choices.map((choice, i) => `
+                <label class="option">
+                    <input type="radio" name="answer" value="${choice}">
+                    ${String.fromCharCode(65 + i)}. ${choice}
+                </label>
+            `).join("")}
+        `;
 
-    updateLadderHighlight();
-    updateStatusBar();
-    startTimer();
+        // Fade-in
+        quizBox.classList.remove("fade-out");
+        quizBox.classList.add("fade-in");
+
+        setTimeout(() => quizBox.classList.remove("fade-in"), 500);
+
+        updateLadderHighlight();
+        updateStatusBar();
+    }, 400);
 }
 
 function updateTimerDisplay() {
