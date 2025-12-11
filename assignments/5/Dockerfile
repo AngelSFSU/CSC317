@@ -1,5 +1,5 @@
 # Stage 1: The Build Stage
-FROM eclipse-temurin:17-jdk-jammy AS builder
+FROM maven:3.9.5-eclipse-temurin-17 AS builder
 
 # Set the working directory for the build process
 WORKDIR /app
