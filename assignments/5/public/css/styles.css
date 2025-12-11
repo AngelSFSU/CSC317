@@ -290,3 +290,23 @@ button:disabled {
         text-align: center;
     }
 }
+
+.option.locked {
+    background: #ffea67;
+    color: #000;
+    box-shadow: 0 0 16px rgba(255, 255, 100, 0.9);
+}
+
+.option.correct {
+    background: #4dff88 !important;
+    box-shadow: 0 0 20px rgba(77, 255, 136, 0.9);
+    color: #021a07 !important;
+    border-color: #4dff88 !important;
+}
+
+.option.wrong {
+    background: #ff6b6b !important;
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.9);
+    color: #210000 !important;
+    border-color: #ff6b6b !important;
+}
