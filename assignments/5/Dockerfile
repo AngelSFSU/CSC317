@@ -1,28 +1,28 @@
-# Stage 1: The Build Stage
-FROM maven:3.9.5-eclipse-temurin-17 AS builder
+# Stage 1: Build Stage (Optional, but good practice for Node.js)
+FROM node:18-alpine AS builder
 
-# Set the working directory for the build process
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the entire project into the container (assuming pom.xml is here)
-COPY . .
+# Copy package.json and package-lock.json to install dependencies
+# We do this first to leverage Docker caching (if dependencies don't change, this layer is skipped)
+COPY package*.json ./
 
-# Build the project, skipping tests
-RUN mvn package -DskipTests
+# Install dependencies (Node uses 'npm install', not 'mvn package')
+RUN npm install
 
-# Define the JAR file variable
-ARG JAR_FILE=target/fifth-grader-quiz-app.jar
+# Stage 2: Production Stage (Smaller, cleaner image for running the app)
+FROM node:18-alpine
 
-# ----------------------------------------------------------------------
-
-# Stage 2: The Runtime Stage
-FROM eclipse-temurin:17-jre-jammy AS runtime
-
-# Set the working directory for the runtime
 WORKDIR /app
 
-# Copy the compiled JAR file from the builder stage
-COPY --from=builder ${JAR_FILE} app.jar
+# Copy all files from the builder stage, including node_modules
+# Since the app uses EJS, we need the views and app.js
+COPY --from=builder /app .
 
-# Define the command to run the application
-CMD ["java", "-jar", "app.jar"]
+# Expose the port your Express app listens on (e.g., 3000)
+EXPOSE 3000
+
+# Command to run your application (starts app.js)
+CMD ["npm", "start"]
+# OR CMD ["node", "app.js"] if your package.json doesn't have a start script
