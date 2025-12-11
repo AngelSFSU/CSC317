@@ -5,7 +5,7 @@ WORKDIR app
 COPY . .
 
 
-FROM openjdk17-jre-slim
+FROM openjdk:17-jdk-slim AS build
 
 ARG JAR_FILE=targetfifth-grader-quiz-app.jar
 
