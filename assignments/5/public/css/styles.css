@@ -310,3 +310,16 @@ button:disabled {
     color: #210000 !important;
     border-color: #ff6b6b !important;
 }
+
+#quiz-box {
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;
+}
+
+#quiz-box.fade-out {
+    opacity: 0;
+}
+
+#quiz-box.fade-in {
+    opacity: 1;
+}
