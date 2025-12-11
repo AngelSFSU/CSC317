@@ -26,6 +26,7 @@ if (outcome === "win") {
 </script>
 
 <body>
+<div class="<%= status === 'win' ? 'win-screen' : 'fail-screen' %>">
 <div class="container">
 
     <div class="logo">
@@ -50,6 +51,7 @@ if (outcome === "win") {
         <a href="/" class="button-link">Play Again</a>
     </div>
 
+</div>
 </div>
 </body>
 </html>
