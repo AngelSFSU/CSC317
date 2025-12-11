@@ -1,16 +1,14 @@
-FROM openjdk17-jdk-slim AS build
+# Stage 1: The Build Stage (name it 'builder')
+FROM openjdk:17-jdk-slim AS builder
+# ... other build commands (WORKDIR, COPY source, RUN mvn package, etc.) ...
+ARG JAR_FILE=target/fifth-grader-quiz-app.jar
 
-WORKDIR app
+# Stage 2: The Runtime Stage (name it 'runtime')
+# You are using 'openjdk17-jre-slim' which is a good image for running Java apps
+FROM openjdk:17-jre-slim AS runtime
+# ... other runtime commands (WORKDIR, etc.) ...
 
-COPY . .
+# Get the compiled JAR file from the builder stage
+COPY --from=builder ${JAR_FILE} app.jar
 
-
-FROM openjdk:17-jdk-slim AS build
-
-ARG JAR_FILE=targetfifth-grader-quiz-app.jar
-
-COPY --from=build app${JAR_FILE} app.jar
-
-CMD [java, -jar, app.jar]
-
-EXPOSE 8080
+CMD ["java", "-jar", "app.jar"]
