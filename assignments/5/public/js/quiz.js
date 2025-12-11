@@ -20,10 +20,6 @@ const NUM_EASY = 5;
 const NUM_MEDIUM = 5;
 const NUM_HARD = 4;
 
-const QUESTION_TIME = 30;   // seconds per question
-let timerInterval = null;
-let timeLeft = QUESTION_TIME;
-
 let questions = [];
 let currentIndex = 0;
 let currentEarnings = 0;
@@ -94,7 +90,6 @@ function renderQuestion() {
 
     updateLadderHighlight();
     updateStatusBar();
-    startTimer();
 }
 
 async function submitAnswer() {
