@@ -273,6 +273,52 @@ button:disabled {
     text-align: center;
 }
 
+/* ===== Timer (Basic) ===== */
+.timer-wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 6px;
+    margin-bottom: 10px;
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+
+    background: radial-gradient(circle at top,
+        rgba(251, 216, 92, 0.15),
+        rgba(5, 10, 30, 0.95)
+    );
+
+    border: 2px solid rgba(244, 215, 83, 0.65);
+    box-shadow:
+        0 0 12px rgba(39, 209, 255, 0.7),
+        0 0 18px rgba(0, 0, 0, 0.8);
+}
+
+.timer-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #ffe89a;
+    margin-bottom: 2px;
+}
+
+.timer-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow:
+        0 0 6px rgba(0, 0, 0, 1),
+        0 0 10px rgba(39, 209, 255, 0.8);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 800px) {
     .game-layout {
