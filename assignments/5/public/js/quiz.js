@@ -20,6 +20,10 @@ const NUM_EASY = 5;
 const NUM_MEDIUM = 5;
 const NUM_HARD = 4;
 
+const QUESTION_TIME = 30;   // seconds per question
+let timerInterval = null;
+let timeLeft = QUESTION_TIME;
+
 let questions = [];
 let currentIndex = 0;
 let currentEarnings = 0;
@@ -90,6 +94,52 @@ function renderQuestion() {
 
     updateLadderHighlight();
     updateStatusBar();
+    startTimer();
+}
+
+
+function updateTimerDisplay() {
+    const timerEl = document.getElementById("timer");
+    if (!timerEl) return; // in case element isn't on this page
+
+    timerEl.textContent = timeLeft;
+    timerEl.classList.toggle("low-time", timeLeft <= 5);
+}
+
+function resetTimer() {
+    if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+    }
+    timeLeft = QUESTION_TIME;
+    updateTimerDisplay();
+}
+
+function startTimer() {
+    resetTimer();
+
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        updateTimerDisplay();
+
+        if (timeLeft <= 0) {
+            clearInterval(timerInterval);
+            timerInterval = null;
+            handleTimeUp();
+        }
+    }, 1000);
+}
+
+// what happens when time runs out
+function handleTimeUp() {
+    // Disable all options
+    document.querySelectorAll("input[name='answer']").forEach(r => {
+        r.disabled = true;
+    });
+
+    // You can treat this as a loss or as a special "timeout" status.
+    // If your /result page only knows "win" and "lose", use status=lose.
+    window.location.href = `/result?status=timeout&earned=${guaranteedEarnings}`;
 }
 
 function submitAnswer() {
