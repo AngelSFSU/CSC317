@@ -95,6 +95,7 @@ function renderQuestion() {
 
         updateLadderHighlight();
         updateStatusBar();
+        startTimer();
     }, 400);
 }
 
