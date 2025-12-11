@@ -20,10 +20,6 @@ const NUM_EASY = 5;
 const NUM_MEDIUM = 5;
 const NUM_HARD = 4;
 
-const QUESTION_TIME = 30;   // seconds per question
-let timerInterval = null;
-let timeLeft = QUESTION_TIME;
-
 let questions = [];
 let currentIndex = 0;
 let currentEarnings = 0;
@@ -94,85 +90,60 @@ function renderQuestion() {
 
     updateLadderHighlight();
     updateStatusBar();
-    startTimer();
 }
 
-
-function updateTimerDisplay() {
-    const timerEl = document.getElementById("timer");
-    if (!timerEl) return; // in case element isn't on this page
-
-    timerEl.textContent = timeLeft;
-    timerEl.classList.toggle("low-time", timeLeft <= 5);
-}
-
-function resetTimer() {
-    if (timerInterval) {
-        clearInterval(timerInterval);
-        timerInterval = null;
-    }
-    timeLeft = QUESTION_TIME;
-    updateTimerDisplay();
-}
-
-function startTimer() {
-    resetTimer();
-
-    timerInterval = setInterval(() => {
-        timeLeft--;
-        updateTimerDisplay();
-
-        if (timeLeft <= 0) {
-            clearInterval(timerInterval);
-            timerInterval = null;
-            handleTimeUp();
-        }
-    }, 1000);
-}
-
-// what happens when time runs out
-function handleTimeUp() {
-    // Disable all options
-    document.querySelectorAll("input[name='answer']").forEach(r => {
-        r.disabled = true;
-    });
-
-    // You can treat this as a loss or as a special "timeout" status.
-    // If your /result page only knows "win" and "lose", use status=lose.
-    window.location.href = `/result?status=timeout&earned=${guaranteedEarnings}`;
-}
-
-function submitAnswer() {
+async function submitAnswer() {
     const selected = document.querySelector("input[name='answer']:checked");
+
     if (!selected) {
-        alert("You must select an answer before locking it in.");
+        alert("Please select an answer.");
         return;
     }
 
-    const userAnswer = selected.value;
+    const userChoice = selected.closest(".option");
     const correctAnswer = questions[currentIndex].answer;
 
-    if (userAnswer === correctAnswer) {
-        // correct
-        currentEarnings = MONEY_LADDER[currentIndex];
+    // Lock-in animation
+    userChoice.classList.add("locked");
+    sfx.lock.play();
 
-        const qNumber = currentIndex + 1;
-        if (qNumber === 5 || qNumber === 10) {
-            guaranteedEarnings = currentEarnings;
+    // Pause before reveal
+    await delay(1500);
+
+    // Reveal correct answer
+    const allOptions = document.querySelectorAll(".option");
+    allOptions.forEach(opt => {
+        const val = opt.querySelector("input").value;
+        if (val === correctAnswer) {
+            opt.classList.add("correct");
+        } else if (opt === userChoice) {
+            opt.classList.add("wrong");
         }
+    });
 
-        if (currentIndex === questions.length - 1) {
-            // won the whole thing
-            window.location.href = `/result?status=win&earned=${currentEarnings}`;
-            return;
-        }
-
-        currentIndex++;
-        renderQuestion();
+    // Play correct/wrong sound
+    if (userChoice.querySelector("input").value === correctAnswer) {
+        sfx.correct.play();
     } else {
-        // wrong – fall back to guaranteed amount
-        window.location.href = `/result?status=lose&earned=${guaranteedEarnings}`;
+        sfx.wrong.play();
+        await delay(2500); // dramatic pause
+        return window.location.href = `/result?status=lose&earned=${guaranteedEarnings}`;
     }
+
+    // Pause for dramatic effect
+    await delay(3000);
+
+    // Move to next question
+    if (currentIndex === questions.length - 1) {
+        return window.location.href = `/result?status=win&earned=${currentEarnings}`;
+    }
+
+    currentIndex++;
+    renderQuestion();
+}
+
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function useFiftyFifty() {
