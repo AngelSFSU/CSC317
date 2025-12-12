@@ -433,3 +433,65 @@ body {
     50% { filter: brightness(1.15); }
     100% { filter: brightness(1); }
 }
+
+
+.leaderboard-section {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+}
+
+.leaderboard-section h2,
+.leaderboard-section h3 {
+    margin-bottom: 8px;
+}
+
+#scoreForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+#scoreForm input[type="text"] {
+    flex: 1;
+    min-width: 160px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+}
+
+.save-message {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.save-message.success-message {
+    color: #4dff88;
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 0.9rem;
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 6px 8px;
+    text-align: left;
+}
+
+.leaderboard-table th {
+    font-weight: 700;
+    color: #ffd86b;
+}
+
+.leaderboard-table tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.03);
+}

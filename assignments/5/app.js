@@ -10,6 +10,10 @@ app.use(express.json());
 const questionRoutes = require("./routes/api/questions");
 app.use("/api/questions", questionRoutes);
 
+const leaderboardRoutes = require("./routes/api/leaderboard");
+app.use("/api/leaderboard", leaderboardRoutes);
+
+
 // Pages
 app.get("/", (req, res) => {
     res.render("index");
@@ -20,10 +24,10 @@ app.get("/quiz", (req, res) => {
 });
 
 app.get("/result", (req, res) => {
-    res.render("result", {
-        status: req.query.status || "lose",
-        earned: req.query.earned || 0
-    });
+    let status = req.query.status || "lose";
+    let earned = Number(req.query.earned) || 0;
+
+    res.render("result", { status, earned });
 });
 
 const PORT = process.env.PORT || 3000;

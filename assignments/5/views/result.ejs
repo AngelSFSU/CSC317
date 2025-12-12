@@ -5,28 +5,12 @@
     <title>Billionaire Results</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-
-<script>
-if ("<%= status %>" === "win") {
-    const duration = 5000;
-    const end = Date.now() + duration;
-
-    (function frame() {
-        confetti({
-            particleCount: 4,
-            spread: 70,
-            origin: { y: 0.6 }
-        });
-        if (Date.now() < end) requestAnimationFrame(frame);
-    })();
-}
-</script>
 
 <body>
 <div class="<%= status === 'win' ? 'win-screen' : 'fail-screen' %>">
 <div class="container">
 
+    <!-- GAME RESULT HEADER -->
     <div class="logo">
         <div class="logo-badge">
             <span class="ring"></span>
@@ -35,21 +19,171 @@ if ("<%= status %>" === "win") {
         <h1><%= status === "win" ? "You Did It!" : "Better Luck Next Time" %></h1>
     </div>
 
+    <!-- EARNINGS -->
     <p class="result-text">
-        You walk away with: <strong>$<%= earned %></strong>
+        You walk away with: <strong>$<%= earned.toLocaleString() %></strong>
     </p>
 
     <% if (status === "win") { %>
         <h2 class="success">You are officially a Billionaire! 💰</h2>
+    <% } else if (status === "timeout") { %>
+        <h2 class="fail">Time’s up! You leave with your guaranteed winnings.</h2>
     <% } else { %>
         <h2 class="fail">You didn’t reach the top, but you kept your guaranteed winnings.</h2>
     <% } %>
 
+    <!-- PLAY AGAIN -->
     <div class="result-actions">
         <a href="/" class="button-link">Play Again</a>
     </div>
 
+    <!-- LEADERBOARD -->
+    <section class="leaderboard-section">
+        <h2>Save Your Score</h2>
+        <p>Enter your name to save your result to the leaderboard.</p>
+
+        <form id="scoreForm">
+            <input
+                type="text"
+                id="playerName"
+                name="playerName"
+                placeholder="Your name"
+                maxlength="20"
+                required
+            >
+            <button type="submit">Save to Leaderboard</button>
+        </form>
+
+        <div id="saveMessage" class="save-message"></div>
+
+        <h3>Top Scores</h3>
+        <div id="leaderboard">
+            <p>Loading leaderboard...</p>
+        </div>
+    </section>
+
 </div>
 </div>
+
+<!-- CONFETTI LIBRARY -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+<!-- CONFETTI SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    if ("<%= status %>" === "win") {
+        const duration = 4500;
+        const end = Date.now() + duration;
+
+        (function frame() {
+            confetti({
+                particleCount: 8,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+            if (Date.now() < end) requestAnimationFrame(frame);
+        })();
+    }
+});
+</script>
+
+<!-- LEADERBOARD SCRIPT -->
+<script>
+const finalStatus = "<%= status %>";
+const finalEarned = Number(<%= earned %>);
+
+async function loadLeaderboard() {
+    try {
+        const res = await fetch("/api/leaderboard");
+        const data = await res.json();
+        const container = document.getElementById("leaderboard");
+
+        if (!data.entries || data.entries.length === 0) {
+            container.innerHTML = "<p>No scores yet. Be the first!</p>";
+            return;
+        }
+
+        const rows = data.entries.map((entry, index) => `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${entry.name}</td>
+                <td>$${entry.amount.toLocaleString()}</td>
+                <td>${entry.status === "win" ? "Win" : "Lose"}</td>
+            </tr>
+        `).join("");
+
+        container.innerHTML = `
+            <table class="leaderboard-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Player</th>
+                        <th>Amount</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${rows}
+                </tbody>
+            </table>
+        `;
+    } catch (err) {
+        console.error("Error loading leaderboard:", err);
+        document.getElementById("leaderboard").innerHTML =
+            "<p>Could not load leaderboard.</p>";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadLeaderboard();
+
+    const form = document.getElementById("scoreForm");
+    const nameInput = document.getElementById("playerName");
+    const msgEl = document.getElementById("saveMessage");
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const name = nameInput.value.trim();
+        if (!name) {
+            msgEl.textContent = "Please enter a name.";
+            return;
+        }
+
+        try {
+            const res = await fetch("/api/leaderboard", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name,
+                    amount: finalEarned,
+                    status: finalStatus
+                })
+            });
+
+            if (!res.ok) {
+                const errData = await res.json().catch(() => ({}));
+                msgEl.textContent = errData.error || "Could not save score.";
+                return;
+            }
+
+            const data = await res.json();
+            msgEl.textContent = "Score saved!";
+            msgEl.classList.add("success-message");
+
+            // Update leaderboard on screen
+            loadLeaderboard();
+
+            nameInput.disabled = true;
+            form.querySelector("button[type='submit']").disabled = true;
+
+        } catch (err) {
+            console.error("Error saving score:", err);
+            msgEl.textContent = "Error saving score.";
+        }
+    });
+});
+</script>
+
 </body>
 </html>
