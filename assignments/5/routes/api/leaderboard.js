@@ -1,7 +1,7 @@
 // ./routes/api/leaderboard.js (UPDATED)
 const express = require("express");
 const router = express.Router();
-const Score = require("../../models/Score"); 
+const score = require("../../models/Score"); 
 const game = require("../../models/game"); // Corrected path to game model
 const { MONEY_LADDER, getGuaranteedWinnings } = require("../../../data/questions"); // Get constants
 
@@ -69,8 +69,8 @@ router.post("/", async (req, res) => {
     
     // --- 5. Save the Verified Score ---
     try {
-        const newScore = new Score({ username, score: finalWinnings }); 
-        await newScore.save();
+        const newscore = new Score({ username, score: finalWinnings }); 
+        await newscore.save();
         
         res.status(201).json({ 
             message: "Score submitted and verified!",
