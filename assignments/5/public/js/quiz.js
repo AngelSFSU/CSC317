@@ -1,19 +1,21 @@
+// Money ladder: 15 levels, Q5 and Q10 are guaranteed
+// I changed Q14 to 500,000,000 so it doesn't jump from 500k to 1B.
 const MONEY_LADDER = [
-    100,
-    200,
-    300,
-    500,
-    1000,      // Q5 - guaranteed
-    2000,
-    4000,
-    8000,
-    16000,
-    32000,     // Q10 - guaranteed
-    64000,
-    125000,
-    250000,
-    500000,
-    1000000000 // Q15
+    100,           // Q1
+    200,           // Q2
+    300,           // Q3
+    500,           // Q4
+    1000,          // Q5 - guaranteed
+    2000,          // Q6
+    4000,          // Q7
+    8000,          // Q8
+    16000,         // Q9
+    32000,         // Q10 - guaranteed
+    64000,         // Q11
+    125000,        // Q12
+    250000,        // Q13
+    500000000,     // Q14
+    1000000000     // Q15
 ];
 
 const NUM_EASY = 5;
@@ -39,6 +41,8 @@ const sfx = {
 let lifelinesRemaining = 3;
 let lifelineUsedThisQuestion = false;
 
+// ---------- INIT ----------
+
 async function initGame() {
     try {
         const res = await fetch("/api/questions");
@@ -50,6 +54,12 @@ async function initGame() {
         const billionaire = data.billionaire;
 
         questions = [...easy, ...medium, ...hard, billionaire];
+
+        currentIndex = 0;
+        currentEarnings = 0;
+        guaranteedEarnings = 0;
+        lifelinesRemaining = 3;
+        lifelineUsedThisQuestion = false;
 
         renderQuestion();
         updateStatusBar();
@@ -68,14 +78,23 @@ function pickRandom(array, count) {
     return copy.slice(0, count);
 }
 
+// ---------- RENDER QUESTION ----------
+
 function renderQuestion() {
     const quizBox = document.getElementById("quiz-box");
+    if (!quizBox) return;
+
+    lifelineUsedThisQuestion = false;
 
     // Fade-out before changing question
     quizBox.classList.add("fade-out");
 
     setTimeout(() => {
         const qData = questions[currentIndex];
+
+        // Update question number text (e.g. "Question 3 of 15")
+        const qNumEl = document.getElementById("questionNumber");
+        if (qNumEl) qNumEl.textContent = currentIndex + 1;
 
         quizBox.innerHTML = `
             <h2>${qData.question}</h2>
@@ -93,16 +112,27 @@ function renderQuestion() {
 
         setTimeout(() => quizBox.classList.remove("fade-in"), 500);
 
+        // Reset and start timer for this question
+        startTimer();
+
+        // Update ladder + bar
         updateLadderHighlight();
         updateStatusBar();
-        startTimer();
+
+        // Update lifeline button text
+        const lifelineBtn = document.getElementById("lifelineBtn");
+        if (lifelineBtn) {
+            lifelineBtn.disabled = lifelinesRemaining === 0;
+            lifelineBtn.textContent = `50/50 (x${lifelinesRemaining})`;
+        }
     }, 400);
 }
 
+// ---------- TIMER ----------
+
 function updateTimerDisplay() {
     const timerEl = document.getElementById("timer");
-    if (!timerEl) return; // in case element isn't on this page
-
+    if (!timerEl) return;
     timerEl.textContent = timeLeft;
     timerEl.classList.toggle("low-time", timeLeft <= 5);
 }
@@ -118,7 +148,6 @@ function resetTimer() {
 
 function startTimer() {
     resetTimer();
-
     timerInterval = setInterval(() => {
         timeLeft--;
         updateTimerDisplay();
@@ -138,10 +167,11 @@ function handleTimeUp() {
         r.disabled = true;
     });
 
-    // You can treat this as a loss or as a special "timeout" status.
-    // If your /result page only knows "win" and "lose", use status=lose.
+    // Treat timeout as a loss at guaranteed amount
     window.location.href = `/result?status=timeout&earned=${guaranteedEarnings}`;
 }
+
+// ---------- ANSWER HANDLING WITH SUSPENSE ----------
 
 async function submitAnswer() {
     const selected = document.querySelector("input[name='answer']:checked");
@@ -149,6 +179,12 @@ async function submitAnswer() {
     if (!selected) {
         alert("Please select an answer.");
         return;
+    }
+
+    // stop timer when user locks in
+    if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
     }
 
     const userChoice = selected.closest(".option");
@@ -172,30 +208,47 @@ async function submitAnswer() {
         }
     });
 
-    // Play correct/wrong sound
-    if (userChoice.querySelector("input").value === correctAnswer) {
+    const isCorrect = (userChoice.querySelector("input").value === correctAnswer);
+
+    if (isCorrect) {
+        // correct sound
         sfx.correct.play();
+
+        // ---- UPDATE EARNINGS ----
+        const qNumber = currentIndex + 1;
+        currentEarnings = MONEY_LADDER[currentIndex];
+
+        if (qNumber === 5 || qNumber === 10) {
+            guaranteedEarnings = currentEarnings;
+        }
+
+        updateStatusBar();
+        updateLadderHighlight();
+
+        // Pause for dramatic effect before moving on
+        await delay(3000);
+
+        // Final question?
+        if (currentIndex === questions.length - 1) {
+            return window.location.href = `/result?status=win&earned=${currentEarnings}`;
+        }
+
+        // Go to next question
+        currentIndex++;
+        renderQuestion();
     } else {
+        // wrong answer
         sfx.wrong.play();
-        await delay(2500); // dramatic pause
+        await delay(2500);
         return window.location.href = `/result?status=lose&earned=${guaranteedEarnings}`;
     }
-
-    // Pause for dramatic effect
-    await delay(3000);
-
-    // Move to next question
-    if (currentIndex === questions.length - 1) {
-        return window.location.href = `/result?status=win&earned=${currentEarnings}`;
-    }
-
-    currentIndex++;
-    renderQuestion();
 }
 
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+// ---------- 50/50 LIFELINE ----------
 
 function useFiftyFifty() {
     if (lifelinesRemaining <= 0) return;
@@ -223,10 +276,14 @@ function useFiftyFifty() {
     lifelineUsedThisQuestion = true;
 
     const lifelineBtn = document.getElementById("lifelineBtn");
-    lifelineBtn.textContent = `50/50 (x${lifelinesRemaining})`;
-    if (lifelinesRemaining === 0) {
-        lifelineBtn.disabled = true;
+    if (lifelineBtn) {
+        lifelineBtn.textContent = `50/50 (x${lifelinesRemaining})`;
+        if (lifelinesRemaining === 0) {
+            lifelineBtn.disabled = true;
+        }
     }
+
+    sfx.lifeline.play();
 }
 
 function shuffleArray(arr) {
@@ -236,9 +293,13 @@ function shuffleArray(arr) {
     }
 }
 
+// ---------- STATUS + LADDER UI ----------
+
 function updateStatusBar() {
-    document.getElementById("currentAmount").textContent = `$${currentEarnings}`;
-    document.getElementById("guaranteedAmount").textContent = `$${guaranteedEarnings}`;
+    const currentEl = document.getElementById("currentAmount");
+    const guaranteedEl = document.getElementById("guaranteedAmount");
+    if (currentEl) currentEl.textContent = `$${currentEarnings.toLocaleString()}`;
+    if (guaranteedEl) guaranteedEl.textContent = `$${guaranteedEarnings.toLocaleString()}`;
 }
 
 function updateLadderHighlight() {
@@ -251,10 +312,18 @@ function updateLadderHighlight() {
 
         if (level === qNumber) {
             li.classList.add("active");
+
+            // Optional: scroll the active ladder item into view
+            li.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
         } else if (level < qNumber) {
             li.classList.add("passed");
         }
     });
 }
+
+// ---------- START ----------
 
 window.onload = initGame;
