@@ -1,4 +1,26 @@
+<<<<<<< HEAD
 // public/js/game.js
+=======
+// Money ladder: 15 levels, Q5 and Q10 are guaranteed
+// I changed Q14 to 500,000,000 so it doesn't jump from 500k to 1B.
+const MONEY_LADDER = [
+    100,           // Q1
+    200,           // Q2
+    300,           // Q3
+    500,           // Q4
+    1000,          // Q5 - guaranteed
+    2000,          // Q6
+    4000,          // Q7
+    8000,          // Q8
+    16000,         // Q9
+    32000,         // Q10 - guaranteed
+    64000,         // Q11
+    125000,        // Q12
+    250000,        // Q13
+    500000000,     // Q14
+    1000000000     // Q15
+];
+>>>>>>> parent of ffac580 (changes)
 
 const MONEY_LADDER = [
     100000, 200000, 300000, 500000,
