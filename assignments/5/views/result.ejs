@@ -4,23 +4,6 @@
     <meta charset="UTF-8">
     <title>Billionaire Results</title>
     <link rel="stylesheet" href="/css/styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-
-<script>
-if ("<%= status %>" === "win") {
-    const duration = 5000;
-    const end = Date.now() + duration;
-
-    (function frame() {
-        confetti({
-            particleCount: 4,
-            spread: 70,
-            origin: { y: 0.6 }
-        });
-        if (Date.now() < end) requestAnimationFrame(frame);
-    })();
-}
-</script>
 </head>
 <body>
 <div class="<%= status === 'win' ? 'win-screen' : 'fail-screen' %>">
@@ -50,5 +33,22 @@ if ("<%= status %>" === "win") {
 
 </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+<script>
+if ("<%= status %>" === "win") {
+    const duration = 5000;
+    const end = Date.now() + duration;
+
+    (function frame() {
+        confetti({
+            particleCount: 4,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+        if (Date.now() < end) requestAnimationFrame(frame);
+    })();
+}
+</script>
 </body>
 </html>
