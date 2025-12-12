@@ -12,11 +12,11 @@ const QUESTION_TIME = 60;   // seconds per question
 let timerInterval = null;
 let timeLeft = QUESTION_TIME;
 
-let questions = [];
+let questions = [];          // [{ question, choices, answer }]
 let currentIndex = 0;
 let currentEarnings = 0;
 let guaranteedEarnings = 0;
-let playerAnswers = [];
+let playerAnswers = [];      // [{ key: "A" }, ...]
 let gameToken = null;
 
 const sfx = {
@@ -36,7 +36,7 @@ async function initGame() {
         const res = await fetch("/api/questions");
         const data = await res.json();
 
-        // Expecting: { gameToken, questions: [...] }
+        // Expect { gameToken, questions }
         gameToken = data.gameToken;
         questions = data.questions;
 
@@ -61,11 +61,14 @@ function renderQuestion() {
     const quizBox = document.getElementById("quiz-box");
     if (!quizBox) return;
 
-    // Fade out
     quizBox.classList.add("fade-out");
 
     setTimeout(() => {
         const qData = questions[currentIndex];
+
+        // update question number if you have that span
+        const qNumEl = document.getElementById("questionNumber");
+        if (qNumEl) qNumEl.textContent = currentIndex + 1;
 
         quizBox.innerHTML = `
             <h2>${qData.question}</h2>
@@ -77,7 +80,6 @@ function renderQuestion() {
             `).join("")}
         `;
 
-        // Fade in
         quizBox.classList.remove("fade-out");
         quizBox.classList.add("fade-in");
         setTimeout(() => quizBox.classList.remove("fade-in"), 500);
@@ -132,7 +134,7 @@ function handleTimeUp() {
     submitGameData("timeout", guaranteedEarnings);
 }
 
-// --------- ANSWER SUBMISSION WITH SUSPENSE ---------
+// --------- ANSWER SUBMISSION ---------
 
 async function submitAnswer() {
     const selected = document.querySelector("input[name='answer']:checked");
@@ -147,42 +149,40 @@ async function submitAnswer() {
     }
 
     const currentQ = questions[currentIndex];
-    const allOptions = Array.from(document.querySelectorAll(".option"));
-    const selectedIndex = allOptions.findIndex(opt => opt.querySelector("input") === selected);
+    const options = Array.from(document.querySelectorAll(".option"));
+
+    const selectedIndex = options.findIndex(opt => opt.querySelector("input") === selected);
     const userAnswerKey = String.fromCharCode(65 + selectedIndex);
 
-    // Track user answers in order
-    playerAnswers.push({
-        // We will use index-based validation on the server, so only key is required
-        key: userAnswerKey
-    });
+    // determine correct index and key from choices + currentQ.answer
+    const correctIndex = currentQ.choices.indexOf(currentQ.answer);
+    const correctKey = String.fromCharCode(65 + correctIndex);
+
+    // store answer by key, in order
+    playerAnswers.push({ key: userAnswerKey });
 
     const userChoice = selected.closest(".option");
-    const correctAnswer = currentQ.answer;
 
-    // Lock in
+    // lock in
     userChoice.classList.add("locked");
     sfx.lock.play();
 
     await delay(1500);
 
-    // Reveal correct / wrong
-    const allOptionsNodes = document.querySelectorAll(".option");
-    allOptionsNodes.forEach(opt => {
-        const val = opt.querySelector("input").value;
-        if (val === correctAnswer) {
+    // Reveal correct/wrong options
+    options.forEach((opt, idx) => {
+        if (idx === correctIndex) {
             opt.classList.add("correct");
         } else if (opt === userChoice) {
             opt.classList.add("wrong");
         }
     });
 
-    const isCorrect = (selected.value === correctAnswer);
+    const isCorrect = (userAnswerKey === correctKey);
 
     if (isCorrect) {
         sfx.correct.play();
 
-        // Update earnings
         currentEarnings = MONEY_LADDER[currentIndex];
         const qNumber = currentIndex + 1;
 
@@ -201,7 +201,6 @@ async function submitAnswer() {
         currentIndex++;
         lifelineUsedThisQuestion = false;
         renderQuestion();
-
     } else {
         sfx.wrong.play();
         await delay(2500);
@@ -223,7 +222,7 @@ async function submitGameData(status, finalEarned) {
     const submissionBody = {
         username: username.trim(),
         answers: playerAnswers,
-        gameToken: gameToken
+        gameToken
     };
 
     try {
@@ -232,8 +231,8 @@ async function submitGameData(status, finalEarned) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(submissionBody)
         });
-
         const data = await res.json();
+
         if (!res.ok) {
             console.error("Leaderboard submission failed:", data.error);
         } else {
