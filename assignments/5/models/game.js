@@ -1,4 +1,4 @@
-
+// models/game.js
 const mongoose = require('mongoose');
 
 const gameSchema = new mongoose.Schema({
@@ -7,16 +7,15 @@ const gameSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    // The specific array of 15 question IDs and their correct answer keys (for security)
+    // The specific array of 15 question "truths" (for secure server-side checking)
     questionsServed: [{
-        qId: { type: String, required: true },
-        answerKey: { type: String, required: true }
+        qId: { type: String, required: true },        // can be question ID or index, up to you
+        answerKey: { type: String, required: true }   // e.g. "A", "B", "C", "D"
     }],
-    // Timestamp for expiration (to clean up old games)
     createdAt: {
         type: Date,
         default: Date.now,
-        expires: '2h' // Documents expire after 2 hours (optional, but good practice)
+        expires: '2h' // auto-delete after 2 hours
     }
 });
 

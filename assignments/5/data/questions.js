@@ -1,39 +1,38 @@
-// ./data/questions.js (Server Constants)
+// data/questions.js
 
-// Prize amounts (The server uses this fixed ladder to calculate the winnings)
+// Prize amounts (server truth – MUST match client ladder)
 const MONEY_LADDER = [
-    100,
-    200,
-    300,
-    500,
-    1000,      // Q5 - guaranteed (Index 4)
-    2000,
-    4000,
-    8000,
-    16000,
-    32000,     // Q10 - guaranteed (Index 9)
-    64000,
-    125000,
-    250000,
+    100000,
+    200000,
+    300000,
     500000,
-    1000000000 // Q15
+    1000000,      // Q5 - guaranteed (index 4)
+    2000000,
+    4000000,
+    8000000,
+    16000000,
+    32000000,     // Q10 - guaranteed (index 9)
+    64000000,
+    125000000,
+    250000000,
+    500000000,
+    1000000000    // Q15
 ];
 
-// Helper function to calculate the guaranteed amount for a given number of correct answers
+// Given number of correctly answered questions (correctCount),
+// return the last guaranteed amount reached so far.
 const getGuaranteedWinnings = (correctCount) => {
     let guaranteed = 0;
-    const prizeLadder = MONEY_LADDER.map((amount, i) => ({
-        amount, 
-        guaranteed: [4, 9].includes(i) // Indices 4 (Q5) and 9 (Q10) are guaranteed
-    }));
-    
-    // Iterate through all questions answered correctly (index < correctCount)
+
+    // indices 4 and 9 are guaranteed thresholds
+    const guaranteedIndices = [4, 9];
+
     for (let i = 0; i < correctCount; i++) {
-        const question = prizeLadder[i];
-        if (question && question.guaranteed) {
-            guaranteed = question.amount;
+        if (guaranteedIndices.includes(i)) {
+            guaranteed = MONEY_LADDER[i];
         }
     }
+
     return guaranteed;
 };
 
