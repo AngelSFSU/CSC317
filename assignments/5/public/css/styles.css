@@ -274,50 +274,90 @@ button:disabled {
 }
 
 /* ===== Timer (Basic) ===== */
-.timer-wrap {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 6px;
-    margin-bottom: 10px;
-}
-
-.timer {
-    display: flex;
-    flex-direction: column;
+/* 🔹 TIMER CONTAINER – glowing pill under the logo */
+#timer-box {
+    position: relative;
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
+    gap: 0.6rem;
 
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
+    margin: 12px 0 22px 0;
+    padding: 0.6rem 1.6rem;
 
-    background: radial-gradient(circle at top,
-        rgba(251, 216, 92, 0.15),
-        rgba(5, 10, 30, 0.95)
-    );
+    border-radius: 999px;
+    background:
+        radial-gradient(circle at top, rgba(80, 140, 255, 0.4), transparent 60%),
+        linear-gradient(135deg, #05081a, #060b2b);
 
-    border: 2px solid rgba(244, 215, 83, 0.65);
+    border: 1px solid rgba(0, 200, 255, 0.8);
     box-shadow:
-        0 0 12px rgba(39, 209, 255, 0.7),
-        0 0 18px rgba(0, 0, 0, 0.8);
-}
+        0 0 18px rgba(0, 180, 255, 0.6),
+        0 0 45px rgba(0, 60, 255, 0.5),
+        0 0 4px rgba(0, 0, 0, 0.8);
 
-.timer-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.12em;
+    color: #f5f7ff;
+    font-size: 1.1rem;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: #ffe89a;
-    margin-bottom: 2px;
 }
 
-.timer-value {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #ffffff;
-    text-shadow:
-        0 0 6px rgba(0, 0, 0, 1),
-        0 0 10px rgba(39, 209, 255, 0.8);
+/* subtle glow ring behind the timer bar */
+#timer-box::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: inherit;
+    border: 1px solid rgba(0, 255, 255, 0.15);
+    box-shadow: 0 0 22px rgba(0, 180, 255, 0.35);
+    opacity: 0.7;
+    pointer-events: none;
 }
+
+/* icon style (the ⏳ you used) */
+#timer-box::first-line {
+    font-weight: 600;
+}
+
+/* 🔹 NUMBER ITSELF – bright gradient pill */
+#timer {
+    display: inline-block;
+    min-width: 2.8rem;
+    text-align: center;
+
+    padding: 0.25rem 0.9rem;
+    border-radius: 999px;
+
+    background: linear-gradient(135deg, #12c2e9, #c471ed, #f64f59);
+    box-shadow:
+        0 0 10px rgba(244, 79, 89, 0.8),
+        0 0 24px rgba(18, 194, 233, 0.6);
+
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: #ffffff;
+}
+
+/* 🔹 LOW-TIME STATE – pulsing red alarm */
+#timer.low-time {
+    background: linear-gradient(135deg, #ff4d4d, #ff1a75);
+    box-shadow:
+        0 0 10px rgba(255, 77, 77, 1),
+        0 0 26px rgba(255, 0, 80, 0.9);
+    animation: timer-pulse 0.7s infinite alternate;
+}
+
+/* pulse animation for last seconds */
+@keyframes timer-pulse {
+    from {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+    to {
+        transform: scale(1.08);
+        filter: brightness(1.2);
+    }
+}
+
 
 /* ===== Responsive ===== */
 @media (max-width: 800px) {
