@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const score = require("../../models/score"); 
 const game = require("../../models/game"); // Corrected path to game model
-const { MONEY_LADDER, getGuaranteedWinnings } = require("../../../data/questions"); // Get constants
+const { MONEY_LADDER, getGuaranteedWinnings } = require("../../data/questions"); // Get constants
 
 // Create prize ladder structure for easy lookups
 const prizeLadder = MONEY_LADDER.map((amount, i) => ({
