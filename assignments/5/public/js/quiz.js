@@ -1,5 +1,4 @@
 // Money ladder: 15 levels, Q5 and Q10 are guaranteed
-// I changed Q14 to 500,000,000 so it doesn't jump from 500k to 1B.
 const MONEY_LADDER = [
     100,           // Q1
     200,           // Q2
