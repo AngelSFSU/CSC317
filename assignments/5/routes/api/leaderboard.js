@@ -1,7 +1,7 @@
 // ./routes/api/leaderboard.js (UPDATED)
 const express = require("express");
 const router = express.Router();
-const score = require("../../models/Score"); 
+const score = require("../../models/score"); 
 const game = require("../../models/game"); // Corrected path to game model
 const { MONEY_LADDER, getGuaranteedWinnings } = require("../../../data/questions"); // Get constants
 
@@ -69,7 +69,7 @@ router.post("/", async (req, res) => {
     
     // --- 5. Save the Verified Score ---
     try {
-        const newscore = new Score({ username, score: finalWinnings }); 
+        const newscore = new score({ username, score: finalWinnings }); 
         await newscore.save();
         
         res.status(201).json({ 
@@ -86,12 +86,12 @@ router.post("/", async (req, res) => {
 // GET /api/leaderboard - Fetch top scores (Unchanged)
 router.get("/", async (req, res) => {
     try {
-        const topScores = await Score.find({})
+        const topscores = await score.find({})
             .sort({ score: -1, dateAchieved: 1 }) 
             .limit(100)
             .select('username score dateAchieved -_id');
 
-        res.json(topScores);
+        res.json(topscores);
     } catch (error) {
         console.error("Error fetching leaderboard:", error);
         res.status(500).json({ error: 'Failed to retrieve leaderboard.' });
