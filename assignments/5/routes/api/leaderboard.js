@@ -2,7 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const Score = require("../../../models/Score"); 
-const Game = require("../../../models/Game"); // Corrected path to Game model
+const game = require("../../../models/game"); // Corrected path to game model
 const { MONEY_LADDER, getGuaranteedWinnings } = require("../../../data/questions"); // Get constants
 
 // Create prize ladder structure for easy lookups
@@ -65,7 +65,7 @@ router.post("/", async (req, res) => {
     }
 
     // --- 4. Clean up Game Token ---
-    await Game.deleteOne({ _id: gameToken });
+    await game.deleteOne({ _id: gameToken });
     
     // --- 5. Save the Verified Score ---
     try {

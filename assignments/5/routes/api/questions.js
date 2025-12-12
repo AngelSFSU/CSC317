@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { loadAllQuestions } = require("../../models/questionModel"); // loads questions.json
-const Game = require("../../../models/Game"); // Corrected path to Game model
+const game = require("../../../models/game"); // Corrected path to game model
 const crypto = require('crypto');
 
 // Constants from your quiz logic
@@ -68,11 +68,11 @@ router.get("/", async (req, res) => {
     const gameId = crypto.randomBytes(16).toString('hex'); // Generate unique token
     
     try {
-        const newGameTruth = new Game({ 
+        const newgameTruth = new game({ 
             _id: gameId, 
             questionsServed: serverTruth 
         });
-        await newGameTruth.save();
+        await newgameTruth.save();
         
         // --- 4. SEND RESPONSE ---
         res.json({
