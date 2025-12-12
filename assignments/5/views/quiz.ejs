@@ -62,5 +62,16 @@
 </div>
 
 <script src="/js/quiz.js"></script>
+<script>
+const bgm = new Audio("/sounds/bgm.mp3");
+bgm.volume = 0.35;  // adjust volume (0.0 - 1.0)
+bgm.loop = true;
+// So we wait for the user's first click on the page.
+document.addEventListener("click", function startMusic() {
+    bgm.play().catch(()=>{});  // silently fail if blocked
+    document.removeEventListener("click", startMusic); // ensures only once
+});
+</script>
+
 </body>
 </html>
