@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { loadAllQuestions } = require("../../models/questionModel"); // loads questions.json
-const game = require("../../../models/game"); // Corrected path to game model
+const game = require("../../models/game"); // Corrected path to game model
 const crypto = require('crypto');
 
 // Constants from your quiz logic

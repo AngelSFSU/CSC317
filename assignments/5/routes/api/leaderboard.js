@@ -1,8 +1,8 @@
 // ./routes/api/leaderboard.js (UPDATED)
 const express = require("express");
 const router = express.Router();
-const Score = require("../../../models/Score"); 
-const game = require("../../../models/game"); // Corrected path to game model
+const Score = require("../../models/Score"); 
+const game = require("../../models/game"); // Corrected path to game model
 const { MONEY_LADDER, getGuaranteedWinnings } = require("../../../data/questions"); // Get constants
 
 // Create prize ladder structure for easy lookups
