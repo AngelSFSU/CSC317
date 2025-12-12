@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <title>Billionaire Results</title>
     <link rel="stylesheet" href="/css/styles.css">
-</head>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 
 <script>
 if ("<%= status %>" === "win") {
@@ -22,7 +21,7 @@ if ("<%= status %>" === "win") {
     })();
 }
 </script>
-
+</head>
 <body>
 <div class="<%= status === 'win' ? 'win-screen' : 'fail-screen' %>">
 <div class="container">
