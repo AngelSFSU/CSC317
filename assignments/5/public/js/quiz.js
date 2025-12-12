@@ -1,24 +1,27 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 // public/js/game.js
 =======
 // Money ladder: 15 levels, Q5 and Q10 are guaranteed
 // I changed Q14 to 500,000,000 so it doesn't jump from 500k to 1B.
+=======
+>>>>>>> parent of 215d163 (Update quiz.js)
 const MONEY_LADDER = [
-    100,           // Q1
-    200,           // Q2
-    300,           // Q3
-    500,           // Q4
-    1000,          // Q5 - guaranteed
-    2000,          // Q6
-    4000,          // Q7
-    8000,          // Q8
-    16000,         // Q9
-    32000,         // Q10 - guaranteed
-    64000,         // Q11
-    125000,        // Q12
-    250000,        // Q13
-    500000000,     // Q14
-    1000000000     // Q15
+    100,
+    200,
+    300,
+    500,
+    1000,      // Q5 - guaranteed
+    2000,
+    4000,
+    8000,
+    16000,
+    32000,     // Q10 - guaranteed
+    64000,
+    125000,
+    250000,
+    500000,
+    1000000000 // Q15
 ];
 >>>>>>> parent of ffac580 (changes)
 
@@ -51,8 +54,11 @@ const sfx = {
 let lifelinesRemaining = 3;
 let lifelineUsedThisQuestion = false;
 
+<<<<<<< HEAD
 // --------- INIT ---------
 
+=======
+>>>>>>> parent of 215d163 (Update quiz.js)
 async function initGame() {
     try {
         const res = await fetch("/api/questions");
@@ -62,6 +68,7 @@ async function initGame() {
         gameToken = data.gameToken;
         questions = data.questions;
 
+<<<<<<< HEAD
         currentIndex = 0;
         currentEarnings = 0;
         guaranteedEarnings = 0;
@@ -69,6 +76,8 @@ async function initGame() {
         lifelinesRemaining = 3;
         lifelineUsedThisQuestion = false;
 
+=======
+>>>>>>> parent of 215d163 (Update quiz.js)
         renderQuestion();
         updateStatusBar();
         updateLadderHighlight();
@@ -77,21 +86,40 @@ async function initGame() {
     }
 }
 
+<<<<<<< HEAD
 // --------- RENDER QUESTION ---------
 
 function renderQuestion() {
     const quizBox = document.getElementById("quiz-box");
     if (!quizBox) return;
 
+=======
+function pickRandom(array, count) {
+    const copy = [...array];
+    for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy.slice(0, count);
+}
+
+function renderQuestion() {
+    const quizBox = document.getElementById("quiz-box");
+
+    // Fade-out before changing question
+>>>>>>> parent of 215d163 (Update quiz.js)
     quizBox.classList.add("fade-out");
 
     setTimeout(() => {
         const qData = questions[currentIndex];
 
+<<<<<<< HEAD
         // update question number if you have that span
         const qNumEl = document.getElementById("questionNumber");
         if (qNumEl) qNumEl.textContent = currentIndex + 1;
 
+=======
+>>>>>>> parent of 215d163 (Update quiz.js)
         quizBox.innerHTML = `
             <h2>${qData.question}</h2>
             ${qData.choices.map((choice, i) => `
@@ -106,6 +134,7 @@ function renderQuestion() {
         quizBox.classList.add("fade-in");
         setTimeout(() => quizBox.classList.remove("fade-in"), 500);
 
+<<<<<<< HEAD
         startTimer();
         updateLadderHighlight();
         updateStatusBar();
@@ -120,9 +149,18 @@ function renderQuestion() {
 
 // --------- TIMER ---------
 
+=======
+        updateLadderHighlight();
+        updateStatusBar();
+        startTimer();
+    }, 400);
+}
+
+>>>>>>> parent of 215d163 (Update quiz.js)
 function updateTimerDisplay() {
     const timerEl = document.getElementById("timer");
-    if (!timerEl) return;
+    if (!timerEl) return; // in case element isn't on this page
+
     timerEl.textContent = timeLeft;
     timerEl.classList.toggle("low-time", timeLeft <= 5);
 }
@@ -138,6 +176,7 @@ function resetTimer() {
 
 function startTimer() {
     resetTimer();
+
     timerInterval = setInterval(() => {
         timeLeft--;
         updateTimerDisplay();
@@ -153,11 +192,20 @@ function handleTimeUp() {
     document.querySelectorAll("input[name='answer']").forEach(r => {
         r.disabled = true;
     });
+<<<<<<< HEAD
     submitGameData("timeout", guaranteedEarnings);
 }
 
 // --------- ANSWER SUBMISSION ---------
 
+=======
+
+    // You can treat this as a loss or as a special "timeout" status.
+    // If your /result page only knows "win" and "lose", use status=lose.
+    window.location.href = `/result?status=timeout&earned=${guaranteedEarnings}`;
+}
+
+>>>>>>> parent of 215d163 (Update quiz.js)
 async function submitAnswer() {
     const selected = document.querySelector("input[name='answer']:checked");
     if (!selected) {
@@ -165,6 +213,7 @@ async function submitAnswer() {
         return;
     }
 
+<<<<<<< HEAD
     if (timerInterval) {
         clearInterval(timerInterval);
         timerInterval = null;
@@ -172,6 +221,10 @@ async function submitAnswer() {
 
     const currentQ = questions[currentIndex];
     const options = Array.from(document.querySelectorAll(".option"));
+=======
+    const userChoice = selected.closest(".option");
+    const correctAnswer = questions[currentIndex].answer;
+>>>>>>> parent of 215d163 (Update quiz.js)
 
     const selectedIndex = options.findIndex(opt => opt.querySelector("input") === selected);
     const userAnswerKey = String.fromCharCode(65 + selectedIndex);
@@ -200,6 +253,7 @@ async function submitAnswer() {
         }
     });
 
+<<<<<<< HEAD
     const isCorrect = (userAnswerKey === correctKey);
 
     if (isCorrect) {
@@ -227,7 +281,27 @@ async function submitAnswer() {
         sfx.wrong.play();
         await delay(2500);
         return await submitGameData("lose", guaranteedEarnings);
+=======
+    // Play correct/wrong sound
+    if (userChoice.querySelector("input").value === correctAnswer) {
+        sfx.correct.play();
+    } else {
+        sfx.wrong.play();
+        await delay(2500); // dramatic pause
+        return window.location.href = `/result?status=lose&earned=${guaranteedEarnings}`;
+>>>>>>> parent of 215d163 (Update quiz.js)
     }
+
+    // Pause for dramatic effect
+    await delay(3000);
+
+    // Move to next question
+    if (currentIndex === questions.length - 1) {
+        return window.location.href = `/result?status=win&earned=${currentEarnings}`;
+    }
+
+    currentIndex++;
+    renderQuestion();
 }
 
 async function submitGameData(status, finalEarned) {
@@ -298,12 +372,16 @@ function useFiftyFifty() {
     lifelineUsedThisQuestion = true;
 
     const lifelineBtn = document.getElementById("lifelineBtn");
+<<<<<<< HEAD
     if (lifelineBtn) {
         lifelineBtn.textContent = `50/50 (x${lifelinesRemaining})`;
         if (lifelinesRemaining === 0) lifelineBtn.disabled = true;
+=======
+    lifelineBtn.textContent = `50/50 (x${lifelinesRemaining})`;
+    if (lifelinesRemaining === 0) {
+        lifelineBtn.disabled = true;
+>>>>>>> parent of 215d163 (Update quiz.js)
     }
-
-    sfx.lifeline.play();
 }
 
 function shuffleArray(arr) {
@@ -314,10 +392,8 @@ function shuffleArray(arr) {
 }
 
 function updateStatusBar() {
-    const currentEl = document.getElementById("currentAmount");
-    const guaranteedEl = document.getElementById("guaranteedAmount");
-    if (currentEl) currentEl.textContent = `$${currentEarnings.toLocaleString()}`;
-    if (guaranteedEl) guaranteedEl.textContent = `$${guaranteedEarnings.toLocaleString()}`;
+    document.getElementById("currentAmount").textContent = `$${currentEarnings}`;
+    document.getElementById("guaranteedAmount").textContent = `$${guaranteedEarnings}`;
 }
 
 function updateLadderHighlight() {
