@@ -421,3 +421,15 @@ button:disabled {
     75% { transform: translate(-4px, 6px); }
     100% { transform: translate(0, 0); }
 }
+body {
+    background:
+        radial-gradient(circle at center, rgba(0, 70, 140, 0.8), #001020 70%),
+        url('/images/spotlight.png') center/cover no-repeat;
+    animation: pulse 6s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(1.15); }
+    100% { filter: brightness(1); }
+}
