@@ -8,16 +8,14 @@
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 
 <script>
-const outcome = "<%= status %>";
-
-if (outcome === "win") {
-    const duration = 4000;
+if ("<%= status %>" === "win") {
+    const duration = 5000;
     const end = Date.now() + duration;
 
     (function frame() {
         confetti({
-            particleCount: 7,
-            spread: 80,
+            particleCount: 4,
+            spread: 70,
             origin: { y: 0.6 }
         });
         if (Date.now() < end) requestAnimationFrame(frame);
