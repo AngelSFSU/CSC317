@@ -262,7 +262,6 @@ function useFiftyFifty() {
         return input.value !== currentQ.answer;
     });
 
-    // pick two incorrect to disable
     shuffleArray(incorrectOptions);
     const toRemove = incorrectOptions.slice(0, 2);
 
@@ -293,7 +292,6 @@ function shuffleArray(arr) {
     }
 }
 
-// ---------- STATUS + LADDER UI ----------
 
 function updateStatusBar() {
     const currentEl = document.getElementById("currentAmount");

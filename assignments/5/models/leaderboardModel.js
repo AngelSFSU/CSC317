@@ -25,7 +25,7 @@ function saveLeaderboard(entries) {
 
 /**
  * Get leaderboard entries sorted by amount desc, then date desc.
- * @param {number} limit - max number of entries to return
+ * @param {number} limit -
  */
 function getTopEntries(limit = 10) {
     const entries = loadLeaderboard();
