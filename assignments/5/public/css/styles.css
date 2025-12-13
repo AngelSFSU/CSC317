@@ -27,7 +27,6 @@ body {
         0 0 20px rgba(34, 201, 255, 0.6);
 }
 
-/* ===== Logo / Header ===== */
 .logo {
     text-align: center;
     margin-bottom: 18px;
@@ -76,7 +75,6 @@ body {
     color: #d9e6ff;
 }
 
-/* ===== Rules ===== */
 .rules {
     margin-top: 18px;
     font-size: 0.95rem;
@@ -96,7 +94,6 @@ body {
     margin-bottom: 6px;
 }
 
-/* ===== Buttons ===== */
 button,
 .button-link {
     display: inline-block;
@@ -138,13 +135,11 @@ button:disabled {
     box-shadow: none;
 }
 
-/* ===== Start wrap ===== */
 .start-wrap {
     text-align: center;
     margin-top: 22px;
 }
 
-/* ===== Game Layout ===== */
 .game-container {
     max-width: 1100px;
 }
@@ -174,7 +169,6 @@ button:disabled {
     color: #ffe58a;
 }
 
-/* ===== Question & Options ===== */
 #quiz-box h2 {
     font-size: 1.3rem;
     margin-bottom: 10px;
@@ -206,7 +200,6 @@ button:disabled {
     pointer-events: none;
 }
 
-/* Controls under question */
 .controls {
     display: flex;
     justify-content: space-between;
@@ -214,7 +207,6 @@ button:disabled {
     margin-top: 16px;
 }
 
-/* ===== Ladder ===== */
 .ladder ul {
     list-style: none;
 }
@@ -247,7 +239,6 @@ button:disabled {
     opacity: 0.6;
 }
 
-/* ===== Result page ===== */
 .result-text {
     margin-top: 18px;
     font-size: 1.1rem;
@@ -272,8 +263,6 @@ button:disabled {
     text-align: center;
 }
 
-/* ===== Timer (Basic) ===== */
-/* 🔹 TIMER CONTAINER – glowing pill under the logo */
 #timer-box {
     position: relative;
     display: inline-flex;
@@ -300,7 +289,6 @@ button:disabled {
     text-transform: uppercase;
 }
 
-/* subtle glow ring behind the timer bar */
 #timer-box::before {
     content: "";
     position: absolute;
@@ -312,12 +300,10 @@ button:disabled {
     pointer-events: none;
 }
 
-/* icon style (the ⏳ you used) */
 #timer-box::first-line {
     font-weight: 600;
 }
 
-/* 🔹 NUMBER ITSELF – bright gradient pill */
 #timer {
     display: inline-block;
     min-width: 2.8rem;
@@ -336,7 +322,6 @@ button:disabled {
     color: #ffffff;
 }
 
-/* 🔹 LOW-TIME STATE – pulsing red alarm */
 #timer.low-time {
     background: linear-gradient(135deg, #ff4d4d, #ff1a75);
     box-shadow:
@@ -345,7 +330,6 @@ button:disabled {
     animation: timer-pulse 0.7s infinite alternate;
 }
 
-/* pulse animation for last seconds */
 @keyframes timer-pulse {
     from {
         transform: scale(1);
@@ -358,7 +342,6 @@ button:disabled {
 }
 
 
-/* ===== Responsive ===== */
 @media (max-width: 800px) {
     .game-layout {
         flex-direction: column-reverse;

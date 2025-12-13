@@ -6,15 +6,12 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.json());
 
-// API
 const questionRoutes = require("./routes/api/questions");
 app.use("/api/questions", questionRoutes);
 
 const leaderboardRoutes = require("./routes/api/leaderboard");
 app.use("/api/leaderboard", leaderboardRoutes);
 
-
-// Pages
 app.get("/", (req, res) => {
     res.render("index");
 });

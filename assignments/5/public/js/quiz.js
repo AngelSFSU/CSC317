@@ -22,7 +22,7 @@ const NUM_EASY = 5;
 const NUM_MEDIUM = 5;
 const NUM_HARD = 4;
 
-const QUESTION_TIME = 60;   // seconds per question
+const QUESTION_TIME = 60;
 let timerInterval = null;
 let timeLeft = QUESTION_TIME;
 
@@ -40,8 +40,6 @@ const sfx = {
 
 let lifelinesRemaining = 3;
 let lifelineUsedThisQuestion = false;
-
-// ---------- INIT ----------
 
 async function initGame() {
     try {
@@ -78,7 +76,6 @@ function pickRandom(array, count) {
     return copy.slice(0, count);
 }
 
-// ---------- RENDER QUESTION ----------
 
 function renderQuestion() {
     const quizBox = document.getElementById("quiz-box");
@@ -86,13 +83,11 @@ function renderQuestion() {
 
     lifelineUsedThisQuestion = false;
 
-    // Fade-out before changing question
     quizBox.classList.add("fade-out");
 
     setTimeout(() => {
         const qData = questions[currentIndex];
 
-        // Update question number text (e.g. "Question 3 of 15")
         const qNumEl = document.getElementById("questionNumber");
         if (qNumEl) qNumEl.textContent = currentIndex + 1;
 
@@ -106,20 +101,16 @@ function renderQuestion() {
             `).join("")}
         `;
 
-        // Fade-in
         quizBox.classList.remove("fade-out");
         quizBox.classList.add("fade-in");
 
         setTimeout(() => quizBox.classList.remove("fade-in"), 500);
 
-        // Reset and start timer for this question
         startTimer();
 
-        // Update ladder + bar
         updateLadderHighlight();
         updateStatusBar();
 
-        // Update lifeline button text
         const lifelineBtn = document.getElementById("lifelineBtn");
         if (lifelineBtn) {
             lifelineBtn.disabled = lifelinesRemaining === 0;
@@ -127,8 +118,6 @@ function renderQuestion() {
         }
     }, 400);
 }
-
-// ---------- TIMER ----------
 
 function updateTimerDisplay() {
     const timerEl = document.getElementById("timer");
@@ -160,18 +149,13 @@ function startTimer() {
     }, 1000);
 }
 
-// what happens when time runs out
 function handleTimeUp() {
-    // Disable all options
     document.querySelectorAll("input[name='answer']").forEach(r => {
         r.disabled = true;
     });
 
-    // Treat timeout as a loss at guaranteed amount
     window.location.href = `/result?status=timeout&earned=${guaranteedEarnings}`;
 }
-
-// ---------- ANSWER HANDLING WITH SUSPENSE ----------
 
 async function submitAnswer() {
     const selected = document.querySelector("input[name='answer']:checked");
@@ -181,7 +165,6 @@ async function submitAnswer() {
         return;
     }
 
-    // stop timer when user locks in
     if (timerInterval) {
         clearInterval(timerInterval);
         timerInterval = null;
@@ -190,14 +173,11 @@ async function submitAnswer() {
     const userChoice = selected.closest(".option");
     const correctAnswer = questions[currentIndex].answer;
 
-    // Lock-in animation
     userChoice.classList.add("locked");
     sfx.lock.play();
 
-    // Pause before reveal
     await delay(1500);
 
-    // Reveal correct answer
     const allOptions = document.querySelectorAll(".option");
     allOptions.forEach(opt => {
         const val = opt.querySelector("input").value;
@@ -211,10 +191,8 @@ async function submitAnswer() {
     const isCorrect = (userChoice.querySelector("input").value === correctAnswer);
 
     if (isCorrect) {
-        // correct sound
         sfx.correct.play();
 
-        // ---- UPDATE EARNINGS ----
         const qNumber = currentIndex + 1;
         currentEarnings = MONEY_LADDER[currentIndex];
 
@@ -225,19 +203,15 @@ async function submitAnswer() {
         updateStatusBar();
         updateLadderHighlight();
 
-        // Pause for dramatic effect before moving on
         await delay(3000);
 
-        // Final question?
         if (currentIndex === questions.length - 1) {
             return window.location.href = `/result?status=win&earned=${currentEarnings}`;
         }
 
-        // Go to next question
         currentIndex++;
         renderQuestion();
     } else {
-        // wrong answer
         sfx.wrong.play();
         await delay(2500);
         return window.location.href = `/result?status=lose&earned=${guaranteedEarnings}`;
@@ -247,8 +221,6 @@ async function submitAnswer() {
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-
-// ---------- 50/50 LIFELINE ----------
 
 function useFiftyFifty() {
     if (lifelinesRemaining <= 0) return;
@@ -311,7 +283,6 @@ function updateLadderHighlight() {
         if (level === qNumber) {
             li.classList.add("active");
 
-            // Optional: scroll the active ladder item into view
             li.scrollIntoView({
                 behavior: "smooth",
                 block: "center"
@@ -321,7 +292,5 @@ function updateLadderHighlight() {
         }
     });
 }
-
-// ---------- START ----------
 
 window.onload = initGame;

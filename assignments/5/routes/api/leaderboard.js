@@ -2,14 +2,12 @@ const express = require("express");
 const router = express.Router();
 const { getTopEntries, addEntry } = require("../../models/leaderboardModel");
 
-// GET /api/leaderboard - return top scores
 router.get("/", (req, res) => {
     const limit = Number(req.query.limit) || 10;
     const entries = getTopEntries(limit);
     res.json({ entries });
 });
 
-// POST /api/leaderboard - add a new score
 router.post("/", (req, res) => {
     const { name, amount, status } = req.body || {};
 

@@ -24,7 +24,6 @@ function saveLeaderboard(entries) {
 }
 
 /**
- * Get leaderboard entries sorted by amount desc, then date desc.
  * @param {number} limit -
  */
 function getTopEntries(limit = 10) {
@@ -37,7 +36,6 @@ function getTopEntries(limit = 10) {
 }
 
 /**
- * Add a new entry to the leaderboard.
  * @param {{name: string, amount: number, status: string}} entry
  */
 function addEntry(entry) {
