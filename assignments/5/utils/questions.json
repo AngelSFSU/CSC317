@@ -1,0 +1,244 @@
+{
+  "easy": [
+    {
+      "question": "What is 9 + 6?",
+      "choices": ["13", "14", "15", "16"],
+      "answer": "15"
+    },
+    {
+      "question": "Which planet is known as the Red Planet?",
+      "choices": ["Mars", "Venus", "Jupiter", "Mercury"],
+      "answer": "Mars"
+    },
+    {
+      "question": "How many sides does a triangle have?",
+      "choices": ["2", "3", "4", "5"],
+      "answer": "3"
+    },
+    {
+      "question": "What is the capital of the United States?",
+      "choices": ["New York", "Washington, D.C.", "Boston", "Chicago"],
+      "answer": "Washington, D.C."
+    },
+    {
+      "question": "Which animal is known as 'man's best friend'?",
+      "choices": ["Cat", "Dog", "Horse", "Rabbit"],
+      "answer": "Dog"
+    },
+    {
+      "question": "How many minutes are in one hour?",
+      "choices": ["30", "45", "60", "90"],
+      "answer": "60"
+    },
+    {
+      "question": "Which shape has four equal sides and four right angles?",
+      "choices": ["Triangle", "Circle", "Square", "Pentagon"],
+      "answer": "Square"
+    },
+    {
+      "question": "What do bees make?",
+      "choices": ["Milk", "Honey", "Oil", "Salt"],
+      "answer": "Honey"
+    },
+    {
+      "question": "Which ocean is on the West Coast of the United States?",
+      "choices": ["Atlantic", "Indian", "Pacific", "Arctic"],
+      "answer": "Pacific"
+    },
+    {
+      "question": "Which color is made by mixing red and blue?",
+      "choices": ["Green", "Purple", "Orange", "Yellow"],
+      "answer": "Purple"
+    },
+    {
+      "question": "How many days are in a leap year?",
+      "choices": ["364", "365", "366", "367"],
+      "answer": "366"
+    },
+    {
+      "question": "What gas do humans need in order to breathe?",
+      "choices": ["Helium", "Oxygen", "Carbon Dioxide", "Nitrogen"],
+      "answer": "Oxygen"
+    },
+    {
+      "question": "What is the main language spoken in Mexico?",
+      "choices": ["French", "English", "Spanish", "Portuguese"],
+      "answer": "Spanish"
+    },
+    {
+      "question": "Which season comes after summer?",
+      "choices": ["Winter", "Spring", "Autumn (Fall)", "Summer again"],
+      "answer": "Autumn (Fall)"
+    },
+    {
+      "question": "How many legs does a spider have?",
+      "choices": ["6", "8", "10", "12"],
+      "answer": "8"
+    }
+  ],
+  "medium": [
+    {
+      "question": "Which country has the longest coastline in the world?",
+      "choices": ["Russia", "Australia", "Canada", "Indonesia"],
+      "answer": "Canada"
+    },
+    {
+      "question": "What is the smallest unit of matter that retains the chemical properties of an element?",
+      "choices": ["Atom", "Molecule", "Proton", "Cell"],
+      "answer": "Atom"
+    },
+    {
+      "question": "Which war officially ended with the Treaty of Paris in 1783?",
+      "choices": ["French and Indian War", "War of 1812", "American Revolutionary War", "Seven Years' War"],
+      "answer": "American Revolutionary War"
+    },
+    {
+      "question": "What is the powerhouse of the cell?",
+      "choices": ["Nucleus", "Ribosome", "Mitochondrion", "Golgi apparatus"],
+      "answer": "Mitochondrion"
+    },
+    {
+      "question": "Which temperature scale sets absolute zero at 0?",
+      "choices": ["Celsius", "Fahrenheit", "Kelvin", "Rankine"],
+      "answer": "Kelvin"
+    },
+    {
+      "question": "What type of rock is formed from cooled magma or lava?",
+      "choices": ["Sedimentary", "Igneous", "Metamorphic", "Basaltic"],
+      "answer": "Igneous"
+    },
+    {
+      "question": "Which U.S. state has the highest number of active volcanoes?",
+      "choices": ["Hawaii", "California", "Alaska", "Washington"],
+      "answer": "Alaska"
+    },
+    {
+      "question": "What part of the brain controls balance and coordination?",
+      "choices": ["Cerebrum", "Cerebellum", "Brain stem", "Amygdala"],
+      "answer": "Cerebellum"
+    },
+    {
+      "question": "How many amendments are in the Bill of Rights?",
+      "choices": ["5", "10", "12", "15"],
+      "answer": "10"
+    },
+    {
+      "question": "Which gas is the most abundant in Earth's atmosphere?",
+      "choices": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Argon"],
+      "answer": "Nitrogen"
+    },
+    {
+      "question": "What is the longest bone in the human body?",
+      "choices": ["Tibia", "Femur", "Humerus", "Pelvis"],
+      "answer": "Femur"
+    },
+    {
+      "question": "Which African river is the world’s deepest?",
+      "choices": ["Nile", "Congo River", "Niger River", "Zambezi"],
+      "answer": "Congo River"
+    },
+    {
+      "question": "Which early civilization invented the first known writing system?",
+      "choices": ["Egyptians", "Sumerians", "Indus Valley", "Phoenicians"],
+      "answer": "Sumerians"
+    },
+    {
+      "question": "Which scientist first proposed the three laws of motion?",
+      "choices": ["Einstein", "Faraday", "Newton", "Galileo"],
+      "answer": "Newton"
+    },
+    {
+      "question": "What is the term for a species that is found only in one specific geographic area?",
+      "choices": ["Invasive", "Indigenous", "Endemic", "Exotic"],
+      "answer": "Endemic"
+    }
+  ],
+  "hard": [
+    {
+      "question": "What phenomenon explains why light bends when it passes through materials of different densities?",
+      "choices": ["Reflection", "Refraction", "Diffraction", "Dispersion"],
+      "answer": "Refraction"
+    },
+    {
+      "question": "Which Chinese dynasty built the majority of what is now the Great Wall of China?",
+      "choices": ["Qin", "Han", "Ming", "Tang"],
+      "answer": "Ming"
+    },
+    {
+      "question": "Which organelle is responsible for packaging and transporting proteins inside the cell?",
+      "choices": ["Golgi apparatus", "Lysosome", "Endoplasmic reticulum", "Cytoskeleton"],
+      "answer": "Golgi apparatus"
+    },
+    {
+      "question": "What is the only metal that is liquid at room temperature?",
+      "choices": ["Mercury", "Gallium", "Sodium", "Cesium"],
+      "answer": "Mercury"
+    },
+    {
+      "question": "What is the name of the supercontinent that existed roughly 300 million years ago?",
+      "choices": ["Laurasia", "Pangaea", "Gondwana", "Rodinia"],
+      "answer": "Pangaea"
+    },
+    {
+      "question": "What is the term for a molecule with both hydrophilic and hydrophobic ends?",
+      "choices": ["Isomer", "Amphipathic", "Ionic", "Chiral"],
+      "answer": "Amphipathic"
+    },
+    {
+      "question": "Which ancient mathematician is known as the 'Father of Geometry'?",
+      "choices": ["Pythagoras", "Euclid", "Archimedes", "Eratosthenes"],
+      "answer": "Euclid"
+    },
+    {
+      "question": "What is the second longest river in South America?",
+      "choices": ["Amazon River", "Paraná River", "Orinoco River", "Rio Negro"],
+      "answer": "Paraná River"
+    },
+    {
+      "question": "Which scientist discovered radioactivity?",
+      "choices": ["Marie Curie", "Henri Becquerel", "Rutherford", "Niels Bohr"],
+      "answer": "Henri Becquerel"
+    },
+    {
+      "question": "What term describes the ability of an organism to maintain a stable internal environment?",
+      "choices": ["Metabolism", "Osmosis", "Homeostasis", "Equilibrium"],
+      "answer": "Homeostasis"
+    },
+    {
+      "question": "Which civilization invented the concept of zero?",
+      "choices": ["Romans", "Greeks", "Mayans", "Phoenicians"],
+      "answer": "Mayans"
+    },
+    {
+      "question": "Which U.S. Supreme Court case established judicial review?",
+      "choices": ["Brown v. Board", "Marbury v. Madison", "Roe v. Wade", "Gibbons v. Ogden"],
+      "answer": "Marbury v. Madison"
+    },
+    {
+      "question": "What is the deepest point in the Earth's oceans?",
+      "choices": ["Tonga Trench", "Puerto Rico Trench", "Mariana Trench", "Java Trench"],
+      "answer": "Mariana Trench"
+    },
+    {
+      "question": "What branch of physics studies motion without regard to force?",
+      "choices": ["Dynamics", "Kinematics", "Thermodynamics", "Statics"],
+      "answer": "Kinematics"
+    },
+    {
+      "question": "Which gas makes up about 21% of Earth’s atmosphere?",
+      "choices": ["Nitrogen", "Oxygen", "Carbon Dioxide", "Neon"],
+      "answer": "Oxygen"
+    }
+  ],
+
+  "billionaire": {
+    "question": "Elite ball knowledge: Who is the only NBA player to win the regular-season MVP, Defensive Player of the Year, and Finals MVP awards all in the same season?",
+    "choices": [
+      "Michael Jordan",
+      "Hakeem Olajuwon",
+      "LeBron James",
+      "Kawhi Leonard"
+    ],
+    "answer": "Hakeem Olajuwon"
+  }
+}

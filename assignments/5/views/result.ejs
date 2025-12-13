@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Billionaire Results</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="<%= status === 'win' ? 'win-screen' : 'fail-screen' %>">
+<div class="container">
+
+    <div class="logo">
+        <div class="logo-badge">
+            <span class="ring"></span>
+            <span>Game Over</span>
+        </div>
+        <h1><%= status === "win" ? "You Did It!" : "Better Luck Next Time" %></h1>
+    </div>
+
+    <p class="result-text">
+        You walk away with: <strong>$<%= earned %></strong>
+    </p>
+
+    <% if (status === "win") { %>
+        <h2 class="success">You are officially a Billionaire! 💰</h2>
+    <% } else { %>
+        <h2 class="fail">You didn’t reach the top, but you kept your guaranteed winnings.</h2>
+    <% } %>
+
+    <div class="result-actions">
+        <a href="/" class="button-link">Play Again</a>
+    </div>
+
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+<script>
+if ("<%= status %>" === "win") {
+    const duration = 5000;
+    const end = Date.now() + duration;
+
+    (function frame() {
+        confetti({
+            particleCount: 4,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+        if (Date.now() < end) requestAnimationFrame(frame);
+    })();
+}
+</script>
+</body>
+</html>
