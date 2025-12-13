@@ -1,4 +1,4 @@
 CSC317 Assignment 5: Group Web Application Project
 
 Overview
-This assignment is a group assignment with 3-4 people per group. We are to develop a complete web application using HTML, CSS, and JavaScript with Express.js for the backend.
+This assignment is a group assignment with 3-4 people per group. We are to develop a complete web application using HTML, CSS, and JavaScript with Express.js for the backend. The web application we decieded to do was "Who Wants To Be A Billionaire." There are 15 queations to answer for this web application. THe questions are randomized for each difficulty. Starting out at easy, then medium, and lastly hard. You are given 3 50/50 for all 15 questions. Answer all questions right and win the fabled billion dollars. Go up against fellow contestants and compare your scores on the leaderboard.
